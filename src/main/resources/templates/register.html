@@ -8,8 +8,8 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
     />
-    <link rel="stylesheet" href="/css/index-header.min.css" />
-    <link rel="stylesheet" href="/css/register.min.css" />
+    <link rel="stylesheet" href="../static/css/index-header.min.css" />
+    <link rel="stylesheet" href="../static/css/register.min.css" />
     <title>Ask Any-Senpai</title>
   </head>
   <body>
@@ -82,6 +82,11 @@
               />
               <label for="senpai">Senpai</label>
             </div>
+            <div class="select-box">
+              <select id="country-selector">
+                <option>Select country</option>
+              </select>
+            </div>
             <div class="form-btn">
               <button type="submit" name="signup" class="signup-btn">
                 Sign up
@@ -107,6 +112,30 @@
           }
         }
       }
+
+      // For country select
+      const selector = $("#country-selector");
+      const countryName = [
+        "Japan",
+        "America",
+        "United Kingdom",
+        "Canada",
+        "Australia",
+        "New Zealand",
+        "Ireland",
+        "Italy",
+        "Germany",
+        "France",
+        "Singapore",
+        "Thailand",
+        "Vietnam",
+        "Philippines",
+      ];
+      countryName.forEach((country) =>
+        $("#country-selector").append(
+          "<option value=" + country + ">" + country + "</option>"
+        )
+      );
     </script>
   </body>
 </html>
