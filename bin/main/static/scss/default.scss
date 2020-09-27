@@ -1,0 +1,26 @@
+$background-white: #e0e2db;
+$background-dark: #0d1b2a;
+$dark: #0d1b2a;
+$white: #e0e2db;
+$pink: #cd8987;
+$blue: #007ea7;
+$orange: #ef8354;
+$light-blue: #bce7fd;
+$dark-blue: #406578;
+$black-coral: #56667a;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh; //delete later
+  background: $background-white;
+}
+
+//Mixin area
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
