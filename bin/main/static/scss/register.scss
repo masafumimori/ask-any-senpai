@@ -1,0 +1,117 @@
+@import "default";
+
+@media screen and (min-width: 671px) {
+  .register {
+    width: 100%;
+    height: 100vh;
+    padding-top: 10vh;
+    display: flex;
+    .left {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //MODIFY THE BACKGROUND
+      background: url(/images/undraw_Access_account_re_8spm.svg);
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .right {
+      width: 50%;
+      height: 100%;
+      margin-left: auto;
+      .signup-form {
+        width: 60%;
+        height: fit-content;
+        margin: 150px auto;
+        padding: 30px;
+        border: 1px solid rgba(0, 0, 0, 0);
+        border-radius: 10px;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+          -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+        .form-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .input-box {
+          position: relative;
+          height: 50px;
+          width: 100%;
+          margin-bottom: 15px;
+          overflow: hidden;
+          .input-item {
+            width: 100%;
+            height: 100%;
+            padding: 20px 5px 0;
+            border: none;
+            outline: none;
+            background: $background-white;
+            cursor: pointer;
+          }
+          .input-label {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            border-bottom: 1px solid $dark;
+            .input-span {
+              position: absolute;
+              bottom: 2px;
+              left: 0px;
+              transition: all 0.5s ease;
+            }
+          }
+          .input-label::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: 100%;
+            width: 100%;
+            border-bottom: 2px solid $blue;
+            transform: translateX(-100%);
+            transition: all 0.5s ease;
+          }
+          .input-item:focus + .input-label .input-span,
+          .input-item:valid + .input-label .input-span {
+            transform: translateY(-150%);
+            font-size: 0.9em;
+            color: $blue;
+          }
+
+          .input-item:focus + .input-label::after,
+          .input-item:valid + .input-label::after {
+            transform: translateX(0%);
+          }
+        }
+        .check-box {
+          display: inline-block;
+          margin: 10px 10px 10px 0;
+        }
+        .form-btn {
+          padding-top: 20px;
+          @include flex-center();
+          .signup-btn {
+            width: 50%;
+            height: 35px;
+            background: $blue;
+            color: $white;
+            font-weight: 700;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+          }
+          .signup-btn:hover {
+            cursor: pointer;
+            filter: contrast(200%);
+          }
+        }
+      }
+    }
+  }
+}
