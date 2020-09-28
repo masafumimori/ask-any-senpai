@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/studyabroad/user")
 public class UserController {
 
-	@RequestMapping("/register")
+	@RequestMapping("/signup")
 	public String register() {
-		return "register";
+		return "signup";
 	}
 	
 	@RequestMapping("/login")
