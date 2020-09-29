@@ -25,19 +25,19 @@
             <div class="input-box">
               <input
                 class="input-item"
-                name="user-name"
+                name="userName"
                 type="text"
                 autocomplete="off"
                 required
               />
-              <label class="input-label" for="user_name">
+              <label class="input-label" for="userName">
                 <span class="input-span">User name</span>
               </label>
             </div>
             <div class="input-box">
               <input
                 class="input-item"
-                name="user-name"
+                name="password"
                 type="text"
                 autocomplete="off"
                 required
@@ -47,7 +47,7 @@
               </label>
             </div>
             <div class="form-btn">
-              <button type="submit" name="login" class="login-btn">
+              <button type="submit" name="login" id="loginBtn" class="login-btn">
                 Login
               </button>
             </div>
@@ -55,5 +55,33 @@
         </div>
       </div>
     </section>
+    
+        <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(() => {
+        $('#loginBtn').on("click", () => {
+        	let loginInfo = {
+        		"userName" : $("input[name=userName]").val(),
+        		"password" : $("input[name=password]").val()
+        	};
+        	$.ajax({
+        		type: "POST",
+        		url: "/studyabroad/user/login",
+        		data: JSON.stringify(loginInfo),
+        		contentType: "application/json",
+        		datatype: "json",
+        		scriptCharset: "utf-8"
+        	})
+        	.then((result) => {
+        		alert("Login Success!");
+        	}, () => {
+        		alert("Registration has failed.");
+        	});
+        	
+        });
+      });
+    </script>
+    
   </body>
 </html>

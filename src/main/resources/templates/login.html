@@ -55,5 +55,33 @@
         </div>
       </div>
     </section>
+    
+        <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(() => {
+        $('#loginBtn').on("click", () => {
+        	let loginInfo = {
+        		"userName" : $("input[name=userName]").val(),
+        		"password" : $("input[name=password]").val()
+        	};
+        	$.ajax({
+        		type: "POST",
+        		url: "/studyabroad/user/login",
+        		data: JSON.stringify(loginInfo),
+        		contentType: "application/json",
+        		datatype: "json",
+        		scriptCharset: "utf-8"
+        	})
+        	.then((result) => {
+        		alert("Login Success!");
+        	}, () => {
+        		alert("Registration has failed.");
+        	});
+        	
+        });
+      });
+    </script>
+    
   </body>
 </html>

@@ -1,5 +1,6 @@
 package com.masafumimori.studyabroad.controller;
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,17 +17,14 @@ public class UserController {
 	
 	@Autowired
 	MstUserMapper userMapper;
-
-	@RequestMapping("/signup")
-	public String register() {
+	
+	@Autowired
+	private Gson gson = new Gson();
+	
+	@RequestMapping("/signup_page")
+	public String signupLoad() {
 		return "signup";
 	}
-	
-	@RequestMapping("/login")
-	public String login() {
-		return "login";
-	}
-	
 	
 	@RequestMapping("/register")
 	@ResponseBody
@@ -37,4 +35,23 @@ public class UserController {
 		
 		return count > 0;
 	}
+	
+	@RequestMapping("/login_page")
+	public String loginLoad() {
+		return "login";
+	}
+	
+	@RequestMapping("/login")
+	@ResponseBody
+	public String login(@RequestBody UserForm f) {
+		
+		String userName = f.getUserName();
+		String password = f.getPassword();
+		
+		MstUser user = userMapper.loginByUserNameAndPass(userName, password);
+		
+		return gson.toJson(user);
+	}
+	
+	
 }
