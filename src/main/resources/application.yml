@@ -1,0 +1,19 @@
+server:
+  port: 3306
+spring:
+  datasource:
+    password: Masafumi9@
+    url: jdbc:mysql://localhost:3306/studyabroad
+    username: root
+
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+  mapper-locations:
+        - classpath*:/com/masafumi/studyabroad/model/mapper/**/*.xml
+
+logging:
+  level:
+    org:
+      springframework: WARN
+    com.masafumimori.studyabroad.model.mapper: DEBUG
