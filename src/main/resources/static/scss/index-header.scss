@@ -40,7 +40,8 @@
             cursor: pointer;
             filter: contrast(200%);
           }
-          a {
+          a,
+          button {
             text-decoration: none;
             color: $background-white;
             width: 100%;
@@ -54,6 +55,10 @@
         }
         .login-btn {
           background: $blue;
+        }
+        #logout-btn {
+          background: $black-coral;
+          color: #000;
         }
       }
     }
