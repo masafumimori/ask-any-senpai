@@ -32,7 +32,8 @@
         align-items: center;
         justify-content: space-around;
         .signup-btn,
-        .login-btn {
+        .login-btn,
+        #logout-btn {
           border-radius: 20px;
           width: 45%;
           height: 60%;
@@ -40,8 +41,7 @@
             cursor: pointer;
             filter: contrast(200%);
           }
-          a,
-          button {
+          a {
             text-decoration: none;
             color: $background-white;
             width: 100%;
