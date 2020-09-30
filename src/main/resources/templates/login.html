@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -58,9 +58,12 @@
     
         <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       $(() => {
-        $('#loginBtn').on("click", () => {
+        $('#loginBtn').on("click", (event) => {
+        	event.preventDefault(); //Needed this
+        	
         	let loginInfo = {
         		"userName" : $("input[name=userName]").val(),
         		"password" : $("input[name=password]").val()
@@ -70,15 +73,23 @@
         		url: "/studyabroad/user/login",
         		data: JSON.stringify(loginInfo),
         		contentType: "application/json",
-        		datatype: "json",
-        		scriptCharset: "utf-8"
+        		datatype: "json"
         	})
-        	.then((result) => {
-        		alert("Login Success!");
-        	}, () => {
-        		alert("Registration has failed.");
-        	});
-        	
+        	.then(
+        			(result) => {
+        				let user = JSON.parse(result);
+        				if(user == null) {
+        					alert("Login failed!");
+        				}else {
+        					alert("Login success!");
+        					location.replace("/studyabroad/user/mypage");
+        				}
+        			},
+        			() => {
+        				alert("Login failed.");
+        			}
+        	);
+        	//alert("Finish!");
         });
       });
     </script>
