@@ -22,10 +22,36 @@
 	      
 	      <div class="switch-div" th:if="${user} != null">
 			<div class="login-btn">
-	          <a href="/studyabroad/user/logout">Log out</a>
+	          <a id="logoutBtn" href="/studyabroad/user/log_out">Log out</a>
 	        </div>
 	      </div>
       </nav>
     </th:block>
+    
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(() => {
+        $('#logoutBtn').on("click", (event) => {
+        	event.preventDefault();
+        	
+        	$.ajax({
+        		type: "POST",
+        		url: "/studyabroad/user/logout",
+        		datatype: "json"
+        	})
+        	.then(
+        			(result) => {
+        					alert("Logged out!");
+        					location.replace("/studyabroad/");
+        			},
+        			() => {
+        				alert("Logout failed.");
+        			}
+        	);
+        });
+      });
+    </script>
   </body>
 </html>

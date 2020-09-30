@@ -79,4 +79,17 @@ public class UserController {
 		return "mypage";
 	}
 
+	@RequestMapping("/logout")
+	@ResponseBody
+	public String logout(Model m) {
+
+		loginSession.setUserId(0);
+		loginSession.setUserName(null);
+		loginSession.setPassword(null);
+		loginSession.setLogined(false);
+
+		m.addAttribute("user", null);
+
+		return "";
+	}
 }
