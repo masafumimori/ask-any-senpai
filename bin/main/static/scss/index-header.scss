@@ -28,29 +28,33 @@
       display: flex;
       align-items: center;
       justify-content: space-around;
-      .signup-btn,
-      .login-btn {
-        border-radius: 20px;
-        width: 45%;
-        height: 60%;
-        &:hover {
-          cursor: pointer;
-          filter: contrast(200%);
+      .switch-div {
+        width: 100%;
+
+        .signup-btn,
+        .login-btn {
+          border-radius: 20px;
+          width: 45%;
+          height: 60%;
+          &:hover {
+            cursor: pointer;
+            filter: contrast(200%);
+          }
+          a {
+            text-decoration: none;
+            color: $background-white;
+            width: 100%;
+            height: 100%;
+            display: block;
+            @include flex-center();
+          }
         }
-        a {
-          text-decoration: none;
-          color: $background-white;
-          width: 100%;
-          height: 100%;
-          display: block;
-          @include flex-center();
+        .signup-btn {
+          background: $pink;
         }
-      }
-      .signup-btn {
-        background: $pink;
-      }
-      .login-btn {
-        background: $blue;
+        .login-btn {
+          background: $blue;
+        }
       }
     }
   }
