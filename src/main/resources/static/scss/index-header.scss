@@ -25,12 +25,11 @@
     nav {
       width: 40%;
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
       .switch-div {
         width: 100%;
-
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
         .signup-btn,
         .login-btn {
           border-radius: 20px;
