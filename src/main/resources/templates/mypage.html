@@ -15,7 +15,11 @@
   <body>
     <!-- Header -->
     <header th:insert="fragments/page_header::pageHeader"></header>
-	<h2>My page</h2>
+ 	<div style="padding-top:20vh;width:100%;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+		<h2 style="font-weight:bold;">My page!</h2>
+		<h3>User name: </h3><p th:text="${user.userName}"/>
+		<h3>Password: </h3><p th:text="${user.password}"/>
+	</div>
     
         <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
