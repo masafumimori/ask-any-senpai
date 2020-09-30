@@ -11,12 +11,14 @@
         <img src="/img/profile(plain_circle).png" alt="" />
       </div>
       <nav>
-        <div class="signup-btn">
-          <a href="/studyabroad/user/signup_page">新規登録</a>
-        </div>
-        <div class="login-btn">
-          <a href="/studyabroad/user/login_page">ログイン</a>
-        </div>
+	      <div class="switch-div" th:if="${user == null}"/>
+	        <div class="signup-btn">
+	          <a href="/studyabroad/user/signup_page">新規登録</a>
+	        </div>
+	        <div class="login-btn">
+	          <a href="/studyabroad/user/login_page">ログイン</a>
+	        </div>
+	      </div>
       </nav>
     </th:block>
   </body>
