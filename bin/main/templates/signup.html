@@ -27,13 +27,37 @@
             <div class="input-box">
               <input
                 class="input-item"
-                name="user-name"
+                name="userName"
                 type="text"
                 autocomplete="off"
                 required
               />
-              <label class="input-label" for="user_name">
+              <label class="input-label" for="userName">
                 <span class="input-span">User name</span>
+              </label>
+            </div>
+            <div class="input-box">
+              <input
+                class="input-item"
+                name="password"
+                type="text"
+                autocomplete="off"
+                required
+              />
+              <label class="input-label" for="password">
+                <span class="input-span">Password</span>
+              </label>
+            </div>
+            <div class="input-box">
+              <input
+                class="input-item"
+                name="fullName"
+                type="text"
+                autocomplete="off"
+                required
+              />
+              <label class="input-label" for="fullName">
+                <span class="input-span">Full name</span>
               </label>
             </div>
             <div class="input-box">
@@ -44,20 +68,8 @@
                 autocomplete="off"
                 required
               />
-              <label class="input-label" for="user_name">
+              <label class="input-label" for="email">
                 <span class="input-span">Email</span>
-              </label>
-            </div>
-            <div class="input-box">
-              <input
-                class="input-item"
-                name="user-name"
-                type="text"
-                autocomplete="off"
-                required
-              />
-              <label class="input-label" for="user_name">
-                <span class="input-span">Password</span>
               </label>
             </div>
             <div class="check-box">
@@ -84,7 +96,7 @@
               </select>
             </div>
             <div class="form-btn">
-              <button type="submit" name="signup" class="signup-btn">
+              <button type="submit" name="signup" id="signupBtn" class="signup-btn">
                 Sign up
               </button>
             </div>
@@ -98,6 +110,28 @@
     <script>
       $(() => {
         $(".status").on("change", disableBtn);
+        
+        $('#signupBtn').on("click", () => {
+        	let jsonString = {
+        		"userName" : $("input[name=userName]").val(),
+        		"password" : $("input[name=password]").val(),
+        		"fullName" : $("input[name=fullName]").val(),
+        		"email" : $("input[name=email]").val()
+        	};
+        	$.ajax({
+        		type: "POST",
+        		url: "/studyabroad/user/register",
+        		data: JSON.stringify(jsonString),
+        		contentType: "application/json",
+        		scriptCharset: "utf-8"
+        	})
+        	.then((result) => {
+        		// does not show up
+            	alert("Successfully registered!");
+        	}, () => {
+        		alert("Registration has failed.");
+        	})
+        })
       });
       // Need to modify this function so it removes disabled when neither is checked
       function disableBtn() {
