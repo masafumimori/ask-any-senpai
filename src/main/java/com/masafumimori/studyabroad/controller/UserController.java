@@ -17,66 +17,66 @@ import com.masafumimori.studyabroad.model.session.LoginSession;
 @Controller
 @RequestMapping("/studyabroad/user")
 public class UserController {
-	
+
 	@Autowired
 	MstUserMapper userMapper;
-	
+
 	@Autowired
 	LoginSession loginSession;
-	
+
 	private Gson gson = new Gson();
-	
+
 	@RequestMapping("/signup_page")
 	public String signupLoad() {
 		return "signup";
 	}
-	
+
 	@RequestMapping("/register")
 	@ResponseBody
 	public boolean register(@RequestBody UserForm f) {
 		MstUser user = new MstUser(f);
-		
+
 		int count = userMapper.insert(user);
-		
+
 		return count > 0;
 	}
-	
+
 	@RequestMapping("/login_page")
 	public String loginLoad() {
 		return "login";
 	}
-	
+
 	@RequestMapping("/login")
 	@ResponseBody
 	public String login(@RequestBody UserForm f) {
-		
+
 		String userName = f.getUserName();
 		String password = f.getPassword();
-		
+
 		MstUser user = userMapper.loginByUserNameAndPass(userName, password);
-		
+
 		if(user != null) {
 			loginSession.setUserId(user.getId());
 			loginSession.setUserName(user.getUserName());
 			loginSession.setPassword(user.getPassword());
 			loginSession.setLogined(true);
 		}
-		
+
 		return gson.toJson(user);
 	}
-	
+
 	@RequestMapping("/mypage")
 	public String mypage(Model m) {
-		
+
 		String userName = loginSession.getUserName();
 		String password = loginSession.getPassword();
-		
+
 		MstUser user = userMapper.loginByUserNameAndPass(userName, password);
-		
+
 		m.addAttribute("user", user);
 		//m.addAttribute("loginSession", loginSession);
 
 		return "mypage";
 	}
-	
+
 }
