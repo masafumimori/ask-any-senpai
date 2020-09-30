@@ -1,12 +1,13 @@
 package com.masafumimori.studyabroad.controller;
 
-import com.google.gson.Gson;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
 import com.masafumimori.studyabroad.model.domain.MstUser;
 import com.masafumimori.studyabroad.model.form.UserForm;
 import com.masafumimori.studyabroad.model.mapper.MstUserMapper;
@@ -18,7 +19,6 @@ public class UserController {
 	@Autowired
 	MstUserMapper userMapper;
 	
-	@Autowired
 	private Gson gson = new Gson();
 	
 	@RequestMapping("/signup_page")
@@ -53,5 +53,9 @@ public class UserController {
 		return gson.toJson(user);
 	}
 	
+	@RequestMapping("/mypage")
+	public String mypage() {
+		return "mypage";
+	}
 	
 }
