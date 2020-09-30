@@ -90,6 +90,6 @@ public class UserController {
 
 		m.addAttribute("user", null);
 
-		return "";
+		return "logout";
 	}
 }
