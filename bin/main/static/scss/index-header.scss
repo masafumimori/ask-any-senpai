@@ -33,6 +33,7 @@
         justify-content: space-around;
         .signup-btn,
         .login-btn,
+        #mypage-btn,
         #logout-btn {
           border-radius: 20px;
           width: 45%;
@@ -55,6 +56,13 @@
         }
         .login-btn {
           background: $blue;
+        }
+        #mypage-btn {
+          background: $orange;
+          color: #fff;
+          outline: none;
+          border: none;
+          margin-left: auto;
         }
         #logout-btn {
           background: $black-coral;
