@@ -1,0 +1,39 @@
+@import "default";
+
+@media screen and (min-width: 671px) {
+  body {
+    height: 100vh;
+    width: 100%;
+    @include flex-center();
+  }
+  .mypage-box {
+    width: 50%;
+    height: fit-content;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px 1px rgba(0, 0, 0, 0.3);
+    @include flex-center();
+    flex-direction: column;
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+      width: fit-content;
+      border-bottom: 1px solid #000;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    .mypage-items {
+      width: 90%;
+      text-align: center;
+      margin: 10px 0;
+      p {
+        font-weight: 600;
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

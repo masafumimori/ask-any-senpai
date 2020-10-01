@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900");
+
 $background-white: #e0e2db;
 $background-dark: #0d1b2a;
 $dark: #0d1b2a;
@@ -11,7 +13,9 @@ $black-coral: #56667a;
 
 * {
   box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
 }
+
 body {
   width: 100%;
   min-height: 100vh; //delete later
