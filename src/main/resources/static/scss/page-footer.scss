@@ -1,0 +1,48 @@
+@import "default";
+
+@media screen and (min-width: 671px) {
+  footer {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 10vh;
+    background: $background-dark;
+    .footer-list {
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      padding: 20px 40px;
+      @include flex-center();
+      flex-wrap: wrap;
+      .footer-items {
+        width: 25%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        font-size: 0.8rem;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+          background: rgba(255, 255, 255, 0.2);
+          transition: 0.3s;
+        }
+      }
+    }
+    .rights-box {
+      width: 100%;
+      height: 40px;
+      @include flex-center();
+      p {
+        font-size: 0.8rem;
+        color: #fff;
+        &::before {
+          content: "";
+          display: block;
+          width: 60px;
+          margin: 0 auto 5px;
+          border-top: 1px solid #fff;
+        }
+      }
+    }
+  }
+}
