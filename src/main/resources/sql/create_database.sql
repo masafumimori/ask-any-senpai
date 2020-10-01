@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS studyabroad;
+CREATE DATABASE studyabroad;
