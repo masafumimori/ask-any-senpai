@@ -31,5 +31,10 @@ public class IndexController {
 		}
 		return "index";
 	}
+	
+	@RequestMapping("/terms")
+	public String terms() {
+		return "terms";
+	}
 
 }
