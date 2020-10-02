@@ -11,7 +11,9 @@ $(() => {
     location.replace("/studyabroad/user/mypage");
   });
 
-  $(".logout-btn").on("click", () => {
+  $(".logout-btn").on("click", (event) => {
+    event.preventDefault();
+
     $.ajax({
       type: "POST",
       url: "/studyabroad/user/logout",
