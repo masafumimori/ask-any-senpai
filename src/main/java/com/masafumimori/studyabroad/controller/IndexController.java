@@ -27,13 +27,21 @@ public class IndexController {
 			MstUser user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
 
 			m.addAttribute("user", user);
-			//m.addAttribute("loginSession", loginSession);
+			// m.addAttribute("loginSession", loginSession);
 		}
 		return "index";
 	}
-	
+
 	@RequestMapping("/terms")
 	public String terms() {
+		if (loginSession.isLogined()) {
+
+			MstUser user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
+
+			m.addAttribute("user", user);
+			// m.addAttribute("loginSession", loginSession);
+		}
+
 		return "terms";
 	}
 
