@@ -103,6 +103,17 @@
     height: 100%;
     padding: 20vh 0 10vh;
     background: $background-white;
+    .back-btn {
+      position: absolute;
+      top: 15vh;
+      left: 5%;
+      font-size: 0.9rem;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
     .terms-box {
       width: 90%;
       height: 100%;
