@@ -34,7 +34,7 @@
         text-align: center;
         margin-bottom: 20px;
       }
-      form {
+      .form {
         @include flex-center();
         flex-direction: column;
         .input-box {
