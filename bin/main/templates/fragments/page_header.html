@@ -14,13 +14,19 @@
       ></script>
       <script>
         $(() => {
+          $(".login-btn").on("click", () => {
+            location.replace("/studyabroad/user/login_page");
+          });
+
+          $(".signup-btn").on("click", () => {
+            location.replace("/studyabroad/user//signup_page");
+          });
+
           $("#mypage-btn").on("click", () => {
             location.replace("/studyabroad/user/mypage");
           });
 
           $("#logout-btn").on("click", () => {
-            event.preventDefault();
-
             $.ajax({
               type: "POST",
               url: "/studyabroad/user/logout",
@@ -40,17 +46,13 @@
 
       <div class="logo">
         <a href="/studyabroad/">
-        	<img src="/img/profile(plain_circle).png" alt="site logo" />
+          <img src="/img/profile(plain_circle).png" alt="site logo" />
         </a>
       </div>
       <nav>
         <div class="switch-div" th:if="${user} == null">
-          <div class="signup-btn">
-            <a href="/studyabroad/user/signup_page">新規登録</a>
-          </div>
-          <div class="login-btn">
-            <a href="/studyabroad/user/login_page">ログイン</a>
-          </div>
+          <button class="signup-btn">新規登録</button>
+          <button class="login-btn">ログイン</button>
         </div>
 
         <div class="switch-div" th:if="${user} != null">
