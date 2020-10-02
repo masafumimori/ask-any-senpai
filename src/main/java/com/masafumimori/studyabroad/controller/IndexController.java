@@ -33,7 +33,7 @@ public class IndexController {
 	}
 
 	@RequestMapping("/terms")
-	public String terms() {
+	public String terms(Model m) {
 		if (loginSession.isLogined()) {
 
 			MstUser user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
