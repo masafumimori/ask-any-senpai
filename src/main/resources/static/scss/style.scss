@@ -121,6 +121,7 @@
       background: #fff;
       padding: 60px 40px;
       border-radius: 20px;
+      box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
       h1 {
         font-size: 2rem;
         font-weight: 700;
@@ -137,6 +138,8 @@
           font-size: 1.3rem;
           font-weight: 700;
           margin: 20px 10px;
+          padding-bottom: 5px;
+          border-bottom: 2px solid $dark-blue;
         }
         .terms-content {
           line-height: 1.5rem;
