@@ -20,11 +20,14 @@
         align-items: center;
         padding-left: 10px;
         font-size: 0.8rem;
-        &:hover {
-          cursor: pointer;
-          text-decoration: underline;
-          background: rgba(255, 255, 255, 0.2);
-          transition: 0.3s;
+        p {
+          padding: 10px;
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            background: rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+          }
         }
       }
     }
@@ -39,7 +42,7 @@
           content: "";
           display: block;
           width: 60px;
-          margin: 0 auto 5px;
+          margin: 0 auto 10px;
           border-top: 1px solid #fff;
         }
       }
