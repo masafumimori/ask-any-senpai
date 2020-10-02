@@ -17,11 +17,14 @@
       </script>
 
       <div class="footer-list">
-        <div class="footer-items">
-          <p><i class="fas fa-caret-right"></i> マイページ</p>
-        </div>
         <div class="footer-items" th:if="${user == null}">
           <p><i class="fas fa-caret-right"></i> ログイン</p>
+        </div>
+        <div class="footer-items" th:if="${user == null}">
+          <p><i class="fas fa-caret-right"></i> 新規登録</p>
+        </div>
+        <div class="footer-items" th:if="${user != null}">
+          <p><i class="fas fa-caret-right"></i> マイページ</p>
         </div>
         <div class="footer-items" th:if="${user != null}">
           <p><i class="fas fa-caret-right"></i> ログアウト</p>
