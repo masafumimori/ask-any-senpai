@@ -12,22 +12,24 @@
       <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
       ></script>
-      <script>
-        $(() => {});
-      </script>
+      <script src="/js/header-footer.js"></script>
 
       <div class="footer-list">
         <div class="footer-items" th:if="${user == null}">
-          <p><i class="fas fa-caret-right"></i> ログイン</p>
+          <p class="login-btn"><i class="fas fa-caret-right"></i> ログイン</p>
         </div>
         <div class="footer-items" th:if="${user == null}">
-          <p><i class="fas fa-caret-right"></i> 新規登録</p>
+          <p class="signup-btn"><i class="fas fa-caret-right"></i> 新規登録</p>
         </div>
         <div class="footer-items" th:if="${user != null}">
-          <p><i class="fas fa-caret-right"></i> マイページ</p>
+          <p class="mypage-btn">
+            <i class="fas fa-caret-right"></i> マイページ
+          </p>
         </div>
         <div class="footer-items" th:if="${user != null}">
-          <p><i class="fas fa-caret-right"></i> ログアウト</p>
+          <p class="logout-btn">
+            <i class="fas fa-caret-right"></i> ログアウト
+          </p>
         </div>
         <div class="footer-items">
           <p><i class="fas fa-caret-right"></i> お役立ち情報</p>

@@ -12,37 +12,7 @@
       <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
       ></script>
-      <script>
-        $(() => {
-          $(".login-btn").on("click", () => {
-            location.replace("/studyabroad/user/login_page");
-          });
-
-          $(".signup-btn").on("click", () => {
-            location.replace("/studyabroad/user//signup_page");
-          });
-
-          $("#mypage-btn").on("click", () => {
-            location.replace("/studyabroad/user/mypage");
-          });
-
-          $("#logout-btn").on("click", () => {
-            $.ajax({
-              type: "POST",
-              url: "/studyabroad/user/logout",
-              datatype: "json",
-            }).then(
-              (result) => {
-                alert("Logged out!");
-                location.replace("/studyabroad/");
-              },
-              () => {
-                alert("Logout failed.");
-              }
-            );
-          });
-        });
-      </script>
+      <script src="/js/header-footer.js"></script>
 
       <div class="logo">
         <a href="/studyabroad/">
@@ -56,8 +26,8 @@
         </div>
 
         <div class="switch-div" th:if="${user} != null">
-          <button id="mypage-btn">マイページ</button>
-          <button id="logout-btn">ログアウト</button>
+          <button class="mypage-btn">マイページ</button>
+          <button class="logout-btn">ログアウト</button>
         </div>
       </nav>
     </th:block>
