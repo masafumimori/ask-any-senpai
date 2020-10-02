@@ -45,4 +45,17 @@ public class IndexController {
 		return "terms";
 	}
 
+	@RequestMapping("/contact")
+	public String contact(Model m) {
+		if (loginSession.isLogined()) {
+
+			MstUser user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
+
+			m.addAttribute("user", user);
+			// m.addAttribute("loginSession", loginSession);
+		}
+
+		return "contact";
+	}
+
 }
