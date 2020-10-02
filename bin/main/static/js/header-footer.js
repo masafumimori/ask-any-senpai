@@ -26,4 +26,8 @@ $(() => {
       }
     );
   });
+
+  $(".terms-btn").on("click", () => {
+    location.replace("/studyabroad/terms");
+  });
 });
