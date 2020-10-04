@@ -1,5 +1,4 @@
 $(() => {
-
   //When pressing login button
   $(".login-btn").on("click", () => {
     location.replace("/studyabroad/user/login_page");
@@ -37,5 +36,10 @@ $(() => {
   //When pressing terms button
   $(".terms-btn").on("click", () => {
     location.replace("/studyabroad/terms");
+  });
+
+  //When pressing contact button
+  $(".contact-btn").on("click", () => {
+    location.replace("/studyabroad/contact");
   });
 });
