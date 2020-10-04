@@ -93,6 +93,20 @@
             }
           }
         }
+        .object-box {
+          .object-items {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            label {
+              padding: 5px;
+            }
+            .uni-select {
+              font-size: 0.9rem;
+              margin-left: 10px;
+            }
+          }
+        }
       }
     }
   }
