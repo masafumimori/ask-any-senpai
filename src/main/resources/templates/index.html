@@ -35,6 +35,7 @@
       <h2>先輩を探す</h2>
       <div class="serach-form">
         <form action="">
+          <!-- Free word -->
           <fieldset class="form-items">
             <legend>
               <i class="fas fa-search"></i>
@@ -47,6 +48,8 @@
               placeholder="国名、大学名、プロフィール内容"
             />
           </fieldset>
+
+          <!-- Area and nations -->
           <fieldset class="form-items">
             <legend><i class="fas fa-globe-africa"></i> 地域・国名</legend>
             <div class="area-nations">
@@ -153,6 +156,59 @@
             </div>
           </fieldset>
 
+          <!-- Objects -->
+          <fieldset class="form-items">
+            <legend><i class="fas fa-graduation-cap"></i>目的</legend>
+            <div class="object-box">
+              <div class="object-items">
+                <input
+                  type="checkbox"
+                  name="short-study"
+                  id="short-study"
+                  class="objects"
+                />
+                <label for="short-study" class="object-name">短期留学</label>
+                <div class="uni-select">
+                  <input
+                    type="checkbox"
+                    name="short-undergrad"
+                    id="short-undergrad"
+                    class="objects uni-items"
+                    disabled
+                  />
+                  <label for="short-undergrad" class="object-name">大学</label>
+                  <input
+                    type="checkbox"
+                    name="short-grad"
+                    id="short-grad"
+                    class="objects uni-items"
+                    disabled
+                  />
+                  <label for="short-grad" class="object-name">大学院</label>
+                </div>
+              </div>
+              <div class="object-items">
+                <input
+                  type="checkbox"
+                  name="long-study"
+                  id="long-study"
+                  class="objects"
+                />
+                <label for="long-study" class="object-name">長期留学</label>
+              </div>
+              <div class="object-items">
+                <input
+                  type="checkbox"
+                  name="work-holiday"
+                  id="work-holiday"
+                  class="objects"
+                />
+                <label for="work-holiday" class="object-name"
+                  >ワーキングホリデー</label
+                >
+              </div>
+            </div>
+          </fieldset>
           <div class="form-btn">
             <button type="submit" name="submit" class="login-btn">検索</button>
           </div>
@@ -175,5 +231,22 @@
 
     <!-- Footer -->
     <footer th:insert="fragments/page_footer::pageFooter"></footer>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(() => {
+        $("#short-study").on("change", btnChange);
+      });
+
+      function btnChange() {
+        let disabled = true;
+        if ($("#short-study").prop("checked")) {
+          disabled = false;
+          console.log("true");
+        }
+        $(".uni-items").prop("disabled", disabled);
+      }
+    </script>
   </body>
 </html>
