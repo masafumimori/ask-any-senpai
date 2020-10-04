@@ -88,8 +88,8 @@
             display: flex;
             flex-wrap: wrap;
             .nations {
-              width: 15%;
-              margin-right: 10px;
+              width: 20%;
+              margin: 5px 10px 5px 0;
             }
           }
         }
@@ -97,7 +97,7 @@
           .object-items {
             display: flex;
             align-items: center;
-            margin: 10px 0;
+            margin: 5px 0;
             label {
               padding: 5px;
             }
