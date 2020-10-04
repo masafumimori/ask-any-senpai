@@ -107,6 +107,22 @@
             }
           }
         }
+        .form-btn {
+          width: 100%;
+          height: 40px;
+          @include flex-center();
+          .submit-btn {
+            height: 100%;
+            width: 20%;
+            background: $black-coral;
+            color: #fff;
+            outline: none;
+            &:hover {
+              cursor: pointer;
+              filter: contrast(200%);
+            }
+          }
+        }
       }
     }
   }
