@@ -44,14 +44,22 @@
             </select>
           </div>
           <!-- Name -->
-          <div class="form-items">
+          <div class="form-items" th:if="${user == null}">
             <label for="category">お名前<span>必須</span></label>
             <input type="text" name="name" />
           </div>
+          <div class="form-items" th:if="${user != null}">
+            <label for="category">お名前<span>必須</span></label>
+            <input type="text" name="name" th:value="${user.userName}" />
+          </div>
           <!-- Email -->
-          <div class="form-items">
+          <div class="form-items" th:if="${user == null}">
             <label for="category">メールアドレス<span>必須</span></label>
             <input type="email" name="email" />
+          </div>
+          <div class="form-items" th:if="${user != null}">
+            <label for="category">メールアドレス<span>必須</span></label>
+            <input type="email" name="email" th:value="${user.email}" />
           </div>
           <!-- Message -->
           <div class="form-items">
