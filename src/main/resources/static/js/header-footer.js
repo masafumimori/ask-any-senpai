@@ -42,4 +42,9 @@ $(() => {
   $(".contact-btn").on("click", () => {
     location.replace("/studyabroad/contact");
   });
+
+  //When pressing policy button
+  $(".policy-btn").on("click", () => {
+    location.replace("/studyabroad/policy");
+  });
 });
