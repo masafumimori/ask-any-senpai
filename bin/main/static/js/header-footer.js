@@ -1,16 +1,21 @@
 $(() => {
+
+  //When pressing login button
   $(".login-btn").on("click", () => {
     location.replace("/studyabroad/user/login_page");
   });
 
+  //When pressing signup button
   $(".signup-btn").on("click", () => {
     location.replace("/studyabroad/user//signup_page");
   });
 
+  //When pressing mypage button
   $(".mypage-btn").on("click", () => {
     location.replace("/studyabroad/user/mypage");
   });
 
+  //When pressing logout button
   $(".logout-btn").on("click", (event) => {
     event.preventDefault();
 
@@ -29,6 +34,7 @@ $(() => {
     );
   });
 
+  //When pressing terms button
   $(".terms-btn").on("click", () => {
     location.replace("/studyabroad/terms");
   });
