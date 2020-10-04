@@ -131,7 +131,8 @@
         line-height: 1.4rem;
         font-size: 0.9rem;
       }
-      .terms-items {
+      .terms-items,
+      .policy-items {
         margin: 40px 0;
         width: 100%;
         h2 {
@@ -141,13 +142,20 @@
           padding-bottom: 5px;
           border-bottom: 2px solid $dark-blue;
         }
-        .terms-content {
+        .terms-content,
+        .policy-content {
           line-height: 1.5rem;
           font-size: 0.9rem;
         }
-        p.terms-content {
+        p.terms-content,
+        p.policy-content {
           padding-left: 30px;
         }
+      }
+      .end {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
       }
     }
   }
