@@ -48,6 +48,4 @@ public class LoginSession implements Serializable {
 	public void setLogined(boolean logined) {
 		this.logined = logined;
 	}
-	
-	
 }
