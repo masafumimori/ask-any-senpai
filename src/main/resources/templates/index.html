@@ -173,7 +173,7 @@
                     type="checkbox"
                     name="short-undergrad"
                     id="short-undergrad"
-                    class="objects uni-items"
+                    class="objects short-uni"
                     disabled
                   />
                   <label for="short-undergrad" class="object-name">大学</label>
@@ -181,7 +181,7 @@
                     type="checkbox"
                     name="short-grad"
                     id="short-grad"
-                    class="objects uni-items"
+                    class="objects short-uni"
                     disabled
                   />
                   <label for="short-grad" class="object-name">大学院</label>
@@ -195,6 +195,24 @@
                   class="objects"
                 />
                 <label for="long-study" class="object-name">長期留学</label>
+                <div class="uni-select">
+                  <input
+                    type="checkbox"
+                    name="long-undergrad"
+                    id="long-undergrad"
+                    class="objects long-uni"
+                    disabled
+                  />
+                  <label for="long-undergrad" class="object-name">大学</label>
+                  <input
+                    type="checkbox"
+                    name="long-grad"
+                    id="long-grad"
+                    class="objects long-uni"
+                    disabled
+                  />
+                  <label for="long-grad" class="object-name">大学院</label>
+                </div>
               </div>
               <div class="object-items">
                 <input
@@ -236,16 +254,26 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
       $(() => {
-        $("#short-study").on("change", btnChange);
+        $("#short-study").on("change", shortBtnChange);
+        $("#long-study").on("change", longBtnChange);
       });
 
-      function btnChange() {
+      function shortBtnChange() {
         let disabled = true;
         if ($("#short-study").prop("checked")) {
           disabled = false;
           console.log("true");
         }
-        $(".uni-items").prop("disabled", disabled);
+        $(".short-uni").prop("disabled", disabled);
+      }
+
+      function longBtnChange() {
+        let disabled = true;
+        if ($("#long-study").prop("checked")) {
+          disabled = false;
+          console.log("true");
+        }
+        $(".long-uni").prop("disabled", disabled);
       }
     </script>
   </body>
