@@ -57,5 +57,10 @@ public class IndexController {
 
 		return "contact";
 	}
+	
+	@RequestMapping("/policy")
+	public String policy() {
+		return "policy";
+	}
 
 }
