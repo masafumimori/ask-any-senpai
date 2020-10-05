@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/reset.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    />
+    <link rel="stylesheet" href="/css/default.min.css" />
+    <link rel="stylesheet" href="/css/page-header.min.css" />
+    <link rel="stylesheet" href="/css/page-footer.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" href="/css/bottom-follow.min.css" />
+    <title>Ask Any-Senpai</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header th:insert="fragments/page_header::pageHeader"></header>
+
+    
+
+    <!-- Bottom follower-->
+    <section class="bottom-follow">
+      <p>サービスについてのご紹介、使い方はこちらから！</p>
+      <div class="bottom-btn">
+        <div class="student-btn">
+          <a href="#">留学を検討中の方はこちら</a>
+        </div>
+        <div class="senpai-btn">
+          <a href="#">留学経験者の方はこちら</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer th:insert="fragments/page_footer::pageFooter"></footer>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </body>
+</html>
