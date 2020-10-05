@@ -23,5 +23,10 @@ public interface MstUserMapper {
 			@Param("userName") String userName,
 			@Param("password") String password
 			);
-	
+
+	@Select("SELECT * FROM mst_user WHERE area = #{area} OR nation = #{nation}")
+	MstUser findByAreaAndNation(
+			@Param("area") String area,
+			@Param("nation") String nation
+			);
 }
