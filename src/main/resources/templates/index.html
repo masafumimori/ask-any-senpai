@@ -34,7 +34,7 @@
     <section class="search-section">
       <h2>先輩を探す</h2>
       <div class="serach-form">
-        <form action="">
+        <form action="/studyabroad/search/">
           <!-- Free word -->
           <fieldset class="form-items">
             <legend>
@@ -55,100 +55,144 @@
             <div class="area-nations">
               <div class="area-box">
                 <div class="areas">
-                  <input type="checkbox" name="asia" id="asia" class="area" />
+                  <input
+                    type="checkbox"
+                    name="areas"
+                    id="asia"
+                    class="area"
+                    th:value="asia"
+                  />
                   <label for="asia" class="area-name">アジア</label>
                 </div>
                 <div class="areas">
-                  <input type="checkbox" name="asia" id="europe" class="area" />
+                  <input
+                    type="checkbox"
+                    name="areas"
+                    id="europe"
+                    class="area"
+                    th:value="europe"
+                  />
                   <label for="europe" class="area-name">ヨーロッパ</label>
                 </div>
                 <div class="areas">
                   <input
                     type="checkbox"
-                    name="asia"
+                    name="areas"
                     id="america"
                     class="area"
+                    value="america"
                   />
                   <label for="america" class="area-name">アメリカ</label>
                 </div>
                 <div class="areas">
-                  <input type="checkbox" name="asia" id="africa" class="area" />
+                  <input
+                    type="checkbox"
+                    name="areas"
+                    id="africa"
+                    class="area"
+                    value="africa"
+                  />
                   <label for="africa" class="area-name">アフリカ</label>
                 </div>
               </div>
               <div class="nation-box">
                 <div class="nations">
-                  <input type="checkbox" name="asia" id="japan" class="area" />
+                  <input
+                    type="checkbox"
+                    name="nations"
+                    id="japan"
+                    class="area"
+                    value="japan"
+                  />
                   <label for="japan" class="area-name">日本</label>
                 </div>
                 <div class="nations">
                   <input
                     type="checkbox"
-                    name="america"
+                    name="nations"
                     id="america"
                     class="area"
+                    value="america"
                   />
                   <label for="america" class="area-name">アメリカ</label>
                 </div>
                 <div class="nations">
-                  <input type="checkbox" name="china" id="china" class="area" />
+                  <input
+                    type="checkbox"
+                    name="nations"
+                    id="china"
+                    class="area"
+                    value="china"
+                  />
                   <label for="china" class="area-name">中国</label>
                 </div>
                 <div class="nations">
                   <input
                     type="checkbox"
-                    name="england"
+                    name="nations"
                     id="england"
                     class="area"
+                    value="england"
                   />
                   <label for="england" class="area-name">イギリス</label>
                 </div>
                 <div class="nations">
                   <input
                     type="checkbox"
-                    name="germany"
+                    name="nations"
                     id="germany"
                     class="area"
+                    value="germany"
                   />
                   <label for="germany" class="area-name">ドイツ </label>
                 </div>
                 <div class="nations">
-                  <input type="checkbox" name="korea" id="korea" class="area" />
+                  <input
+                    type="checkbox"
+                    name="nations"
+                    id="korea"
+                    class="area"
+                    value="korea"
+                  />
                   <label for="korea" class="area-name">韓国</label>
                 </div>
                 <div class="nations">
                   <input
                     type="checkbox"
-                    name="taiwan"
+                    name="nations"
                     id="taiwan"
                     class="area"
+                    value="taiwan"
                   />
                   <label for="taiwan" class="area-name">台湾</label>
                 </div>
                 <div class="nations">
                   <input
                     type="checkbox"
-                    name="singapore"
+                    name="nations"
                     id="singapore"
                     class="area"
+                    value="singapore"
                   />
                   <label for="singapore" class="area-name">シンガポール</label>
                 </div>
                 <div class="nations">
                   <input
                     type="checkbox"
-                    name="vietnam"
+                    name="nations"
                     id="vietnam"
                     class="area"
+                    value="vietnam"
                   />
                   <label for="vietnam" class="area-name">ベトナム</label>
                 </div>
                 <div class="nations">
                   <input
                     type="checkbox"
-                    name="southafrica"
+                    name="nations"
                     id="southafrica"
                     class="area"
+                    value="southafrica"
                   />
                   <label for="southafrica" class="area-name">南アフリカ</label>
                 </div>
