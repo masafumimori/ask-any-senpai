@@ -4,32 +4,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 <mapper namespace="com.masafumimori.studyabroad.model.mapper.UserSearchMapper">
 
 	<select id="findByAreaAndNation" resultType="com.masafumimori.studyabroad.model.domain.MstUser">
-		SELECT * FROM mst_user user
-		<if test="(areas != null) OR (nations != null)">
-		WHERE
-		</if>
-		<if test="(areas != null)">
-			<foreach item="area" collection="areas" open="(" close=")" separator="OR"  index="index">
-				<choose>
-					<when test="index >= 1">
-						area = #{area}
-					</when>
-					<otherwise>
-						area = #{area}
-					</otherwise>
-				</choose>
-			</foreach>
-		</if>
-		<foreach item="nation" collection="nations" open="(" close=")" separator=""  index="index">
-			<choose>
-				<when test="index == 0">
-					(nations LIKE '%${nation}%') 
-				</when>
-				<otherwise>
-					OR (nations LIKE '%${nation}%') 
-				</otherwise>
-			</choose>
-		</foreach>
-		ORDER BY updated_at DESC;
+		SELECT * FROM mst_user
+		<where>
+			<if test="areas != null">
+			area in
+				<foreach item="area" collection="areas" open="(" close=")" separator="," index="index">
+					#{area}
+				</foreach>
+			</if>
+			<if test="nations != null">
+			OR nation in
+				<foreach item="nation" collection="nations" open="(" close=")" separator="," index="index">
+					#{nation}
+				</foreach>
+			</if>
+		</where>
 	</select>
 </mapper>

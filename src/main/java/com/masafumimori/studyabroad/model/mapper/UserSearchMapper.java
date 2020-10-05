@@ -10,7 +10,7 @@ import com.masafumimori.studyabroad.model.domain.MstUser;
 @Mapper
 public interface UserSearchMapper {
 
-	List<MstUser> findByAreaAndNation(
+	public List<MstUser> findByAreaAndNation(
 			@Param("areas") String[] areas,
 			@Param("nations") String[] nations
 			);

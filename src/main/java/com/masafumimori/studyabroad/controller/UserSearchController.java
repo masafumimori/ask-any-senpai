@@ -22,12 +22,24 @@ public class UserSearchController {
 	public String searchUser(SearchForm s, Model m) {
 		
 		List<MstUser> users;
+		String[] areas;
+		String[] nations;
 		
-		//Need to modify definitions of these variables
+		//Need to modify below
 		String keywords = s.getKeywords();
-		String[] areas = s.getAreas().split(",");
-		String[] nations = s.getNations().split(",");
-				
+
+		if(s.getAreas() != null) {
+			areas = s.getAreas().split(",");
+		} else {
+			areas = null;
+		}
+		
+		if(s.getNations() != null) {
+			nations = s.getNations().split(",");
+		} else {
+			nations = null;
+		}
+		
 		if(keywords == null) {
 			users = searchMapper.findByAreaAndNation(areas, nations);
 		} else {

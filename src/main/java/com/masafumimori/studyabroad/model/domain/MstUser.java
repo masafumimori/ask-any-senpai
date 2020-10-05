@@ -11,6 +11,8 @@ public class MstUser {
 	private String password;
 	private String fullName;
 	private String email;
+	private String area;
+	private String nation;
 	private Timestamp createdAt;
 	private Timestamp updatedAt;
 	
@@ -53,6 +55,21 @@ public class MstUser {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public String getNation() {
+		return nation;
+	}
+	public void setNation(String nation) {
+		this.nation = nation;
+	}
+
 	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
