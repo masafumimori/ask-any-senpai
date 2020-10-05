@@ -7,4 +7,11 @@ INSERT INTO mst_user
 VALUES
     (
         "masa", "masa123", "masa@gmail.com", "asia", "japan"
-);
+    ),
+    (
+        "yamada", "yamada123", "yamada@gmail.com", "europe", "england"
+    ),
+    (
+        "michael", "mic123", "michael@yahoo.com", "africa", "southafrica"
+    )
+;
