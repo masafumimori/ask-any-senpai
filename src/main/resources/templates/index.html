@@ -292,6 +292,19 @@
       </div>
     </section>
 
+    <!-- Result section -->
+    <div class="search-result" th:if="${users != null}">
+      <h2>検索結果</h2>
+      <div class="result-box">
+        <div class="users-box" th:each="user: ${users}">
+          <p class="userName" th:text="${user.userName}"></p>
+          <p class="password" th:text="${user.password}"></p>
+          <p class="email" th:text="${user.email}"></p>
+          <p class="area" th:text="${user.area}"></p>
+        </div>
+      </div>
+    </div>
+
     <!-- Bottom follower-->
     <section class="bottom-follow">
       <p>サービスについてのご紹介、使い方はこちらから！</p>
