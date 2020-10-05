@@ -49,6 +49,6 @@ public class UserSearchController {
 		
 		m.addAttribute("users", users);
 		
-		return "search_result";
+		return "index";
 	}
 }
