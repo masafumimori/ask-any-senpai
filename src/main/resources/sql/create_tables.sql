@@ -1,8 +1,12 @@
+USE studyabroad;
+
 CREATE TABLE mst_user (
-    id int(11) PRIMARY KEY AUTO_INCREMENT,
-    user_name varchar 32 NOT NULL UNIQUE,
-    password varchar 16 NOT NULL,
-    email varchar 32 NOT NULL,
-    area varchar 50 NOT NULL,
-    nation varchar 100 NOT NULL
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    user_name VARCHAR(32) NOT NULL UNIQUE,
+    password VARCHAR(16) NOT NULL,
+    email VARCHAR(32) NOT NULL,
+    area VARCHAR(16) NOT NULL,
+    nation VARCHAR(16) NOT NULL,
+    created_at TIMESTAMP NOT NULL default now(),
+    updated_at TIMESTAMP NOT NULL default now() 
 );
