@@ -25,11 +25,11 @@ public class UserSearchController {
 		
 		//Need to modify definitions of these variables
 		String keywords = s.getKeywords();
-		String areas = s.getAreas();
-		String nations = s.getNations();
-		
+		String[] areas = s.getAreas().split(",");
+		String[] nations = s.getNations().split(",");
+				
 		if(keywords == null) {
-			users = searchMapper.findByAreaAndNation(areas.split(" "), nations.split(" "));
+			users = searchMapper.findByAreaAndNation(areas, nations);
 		} else {
 			//Code to search with keywords and areas/nations
 			users = null;
