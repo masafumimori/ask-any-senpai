@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.masafumimori.studyabroad.model.domain.MstUser;
+import com.masafumimori.studyabroad.model.domain.dto.UserSearchDto;
 import com.masafumimori.studyabroad.model.form.SearchForm;
 import com.masafumimori.studyabroad.model.mapper.UserSearchMapper;
 
@@ -21,7 +21,7 @@ public class UserSearchController {
 	@RequestMapping("/")
 	public String searchUser(SearchForm s, Model m) {
 		
-		List<MstUser> users;
+		List<UserSearchDto> users;
 		String[] areas;
 		String[] nations;
 		
