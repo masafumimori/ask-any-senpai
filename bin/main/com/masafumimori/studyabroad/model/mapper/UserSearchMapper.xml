@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		JOIN
 			mst_user_sns AS info
 		ON
-			user.user_name = info.user_name
+			user.id = info.user_id
 		<where>
 			<if test="areas != null">
 			user.area in

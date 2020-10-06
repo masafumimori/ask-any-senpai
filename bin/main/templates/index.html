@@ -297,10 +297,38 @@
       <h2>検索結果</h2>
       <div class="result-box">
         <div class="users-box" th:each="user: ${users}">
-          <p class="userName" th:text="${user.userName}"></p>
-          <p class="password" th:text="${user.twitter}"></p>
-          <p class="email" th:text="${user.instaram}"></p>
-          <p class="area" th:text="${user.facebook}"></p>
+          <div class="profile-img" th:if="${user.twitter != null}">
+            <img
+              th:src="@{'https://twitter.com/' + ${user.twitter} + '/profile_images/'}"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+          </div>
+          <h3 class="userName" th:text="${user.userName}"></h3>
+          <div class="sns-box">
+            <a
+              th:if="${user.twitter != null}"
+              th:href="@{'https://twitter.com/' + ${user.twitter}}"
+              class="twitter"
+              target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              th:if="${user.instagram != null}"
+              th:href="@{'https://instagram.com/' + ${user.instagram}}"
+              class="instagram"
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              th:if="${user.facebook != null}"
+              th:href="@{'https://facebook.com/' + ${user.facebook}}"
+              class="facebook"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </div>
         </div>
       </div>
     </div>
