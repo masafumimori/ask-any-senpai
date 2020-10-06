@@ -4,16 +4,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 <mapper namespace="com.masafumimori.studyabroad.model.mapper.UserSearchMapper">
 
 	<select id="findByAreaAndNation" resultType="com.masafumimori.studyabroad.model.domain.MstUser">
-		SELECT * FROM mst_user
+		SELECT
+			user.user_name,
+			info.twitter,
+			info.instagram,
+			info.facebook
+		FROM
+			mst_user AS user
+		JOIN
+			mst_user_sns AS info
+		ON
+			user.user_name = info.user_name
 		<where>
 			<if test="areas != null">
-			area in
+			user.area in
 				<foreach item="area" collection="areas" open="(" close=")" separator="," index="index">
 					#{area}
 				</foreach>
 			</if>
 			<if test="nations != null">
-			OR nation in
+			OR user.nation in
 				<foreach item="nation" collection="nations" open="(" close=")" separator="," index="index">
 					#{nation}
 				</foreach>
