@@ -104,7 +104,7 @@
             font-weight: 700;
             border: none;
             outline: none;
-            transition-delay: 0.3s;
+            transition-delay: 0.2s;
 
             //Btn effect
             span {
@@ -112,7 +112,7 @@
               position: absolute;
               background: $blue;
               filter: contrast(200%);
-              transition: 0.15s;
+              transition: 0.1s;
               &:nth-child(1) {
                 top: 0;
                 left: 0;
@@ -120,7 +120,6 @@
                 height: 100%;
                 transform: scaleY(0);
                 transform-origin: bottom;
-                transition: transform 0.15s;
               }
               &:nth-child(2) {
                 top: 0;
@@ -129,7 +128,7 @@
                 height: 3px;
                 transform: scaleX(0);
                 transform-origin: left;
-                transition-delay: 0.15s;
+                transition-delay: 0.1s;
               }
               &:nth-child(3) {
                 top: 0;
@@ -138,7 +137,7 @@
                 height: 100%;
                 transform: scaleY(0);
                 transform-origin: bottom;
-                transition-delay: 0.15s;
+                transition-delay: 0.1s;
               }
               &:nth-child(4) {
                 left: 0;
