@@ -6,6 +6,18 @@
     height: 100vh;
     padding-top: 10vh;
     display: flex;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1000px;
+      height: 1000px;
+      border-radius: 50%;
+      background: $dark-blue;
+      top: -10%;
+      right: 48%;
+      transform: translateY(-50%);
+    }
     .left {
       width: 50%;
       display: flex;
@@ -16,6 +28,7 @@
       background-size: 80%;
       background-repeat: no-repeat;
       background-position: center;
+      z-index: 2;
     }
     .right {
       width: 50%;
