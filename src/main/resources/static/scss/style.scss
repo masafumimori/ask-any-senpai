@@ -148,11 +148,21 @@
         height: fit-content;
         background: #fff;
         padding: 20px;
+        border-radius: 20px;
         .profile-img {
           width: 100%;
           height: auto;
           @include flex-center();
           margin-bottom: 20px;
+          img {
+            width: 60%;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid $dark;
+          }
+          .default-pic {
+            border: none;
+          }
         }
         .userName {
           font-size: 1.5rem;
@@ -172,7 +182,7 @@
             .fa-twitter,
             .fa-instagram,
             .fa-facebook {
-              font-size: 30px;
+              font-size: 40px;
             }
             .fa-twitter {
               color: $twitter;
@@ -180,8 +190,9 @@
             .fa-instagram {
               background: $instagram;
               color: white;
-              width: 30px;
-              height: 30px;
+              width: 40px;
+              height: 40px;
+              border-radius: 10px;
             }
             .fa-facebook {
               color: $facebook;
