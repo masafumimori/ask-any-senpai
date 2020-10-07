@@ -12,8 +12,8 @@ import com.masafumimori.studyabroad.model.domain.MstUser;
 public interface MstUserMapper {
 	
 	// For sign-up
-	@Insert("INSERT INTO mst_user (user_name, password, full_name, email)" +
-			"VALUES (#{userName}, #{password}, #{fullName}, #{email})")
+	@Insert("INSERT INTO mst_user (user_name, password, email)" +
+			"VALUES (#{userName}, #{password}, #{email})")
 	@Options(useGeneratedKeys=true, keyProperty="id")
 	int insert(MstUser user);
 

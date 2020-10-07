@@ -9,7 +9,6 @@ public class MstUser {
 	private int id;
 	private String userName;
 	private String password;
-	private String fullName;
 	private String email;
 	private String area;
 	private String nation;
@@ -21,7 +20,6 @@ public class MstUser {
 	public MstUser(UserForm f) {
 		userName = f.getUserName();
 		password = f.getPassword();
-		fullName = f.getFullName();
 		email = f.getEmail();
 	}
 	
@@ -42,12 +40,6 @@ public class MstUser {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public String getFullName() {
-		return fullName;
-	}
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
 	}
 	public String getEmail() {
 		return email;
