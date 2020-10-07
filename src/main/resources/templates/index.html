@@ -297,7 +297,7 @@
       <h2>検索結果</h2>
       <div class="result-box">
         <div class="users-box" th:each="user: ${users}">
-          <div class="profile-img" th:if="${user.twitter == null}">
+          <div class="profile-img" th:if="${user.twitter != null}">
             <img
               th:src="@{'https://unavatar.now.sh/twitter/' + ${user.twitter}}"
               alt=""
@@ -305,7 +305,7 @@
               height="150px"
             />
           </div>
-          <div class="profile-img" th:if="${user.twitter != null}">
+          <div class="profile-img" th:if="${user.twitter == null}">
             <img class="default-pic" src="/img/default-boy.png" alt="" />
           </div>
           <h3 class="userName" th:text="${user.userName}"></h3>
