@@ -23,7 +23,7 @@
         <div class="signup-form">
           <h2 class="form-title">Sign up</h2>
           <!-- Add action-->
-          <form action="">
+          <div class="form">
             <div class="input-box">
               <i class="fas fa-user"></i>
               <input
@@ -64,7 +64,7 @@
                 Sign up
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -73,11 +73,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
       $(() => {
-        $("#signupBtn").on("click", () => {
+        $("#signupBtn").on("click", (event) => {
+          event.preventDefault();
           let jsonString = {
             userName: $("input[name=userName]").val(),
             password: $("input[name=password]").val(),
-            fullName: $("input[name=fullName]").val(),
             email: $("input[name=email]").val(),
           };
           $.ajax({
@@ -88,11 +88,11 @@
             scriptCharset: "utf-8",
           }).then(
             (result) => {
-              // does not show up
-              alert("Successfully registered!");
+              alert("登録が完了しました。");
+              location.replace("/studyabroad/user/login_page");
             },
             () => {
-              alert("Registration has failed.");
+              alert("登録に失敗しました。");
             }
           );
         });
