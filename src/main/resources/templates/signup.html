@@ -25,78 +25,42 @@
           <!-- Add action-->
           <form action="">
             <div class="input-box">
+              <i class="fas fa-user"></i>
               <input
                 class="input-item"
                 name="userName"
                 type="text"
                 autocomplete="off"
-                required
+                placeholder="User name"
               />
-              <label class="input-label" for="userName">
-                <span class="input-span">User name</span>
-              </label>
             </div>
             <div class="input-box">
+              <i class="fas fa-unlock-alt"></i>
               <input
                 class="input-item"
                 name="password"
-                type="text"
+                type="password"
                 autocomplete="off"
-                required
+                placeholder="Password"
               />
-              <label class="input-label" for="password">
-                <span class="input-span">Password</span>
-              </label>
             </div>
             <div class="input-box">
-              <input
-                class="input-item"
-                name="fullName"
-                type="text"
-                autocomplete="off"
-                required
-              />
-              <label class="input-label" for="fullName">
-                <span class="input-span">Full name</span>
-              </label>
-            </div>
-            <div class="input-box">
+              <i class="fas fa-envelope"></i>
               <input
                 class="input-item"
                 name="email"
                 type="text"
                 autocomplete="off"
-                required
+                placeholder="Email"
               />
-              <label class="input-label" for="email">
-                <span class="input-span">Email</span>
-              </label>
-            </div>
-            <div class="check-box">
-              <input
-                class="status"
-                type="checkbox"
-                id="student"
-                value="student"
-              />
-              <label for="student">Student</label>
-            </div>
-            <div class="check-box">
-              <input
-                class="status"
-                type="checkbox"
-                id="senpai"
-                value="senpai"
-              />
-              <label for="senpai">Senpai</label>
-            </div>
-            <div class="select-box">
-              <select id="country-selector">
-                <option>Select country</option>
-              </select>
             </div>
             <div class="form-btn">
-              <button type="submit" name="signup" id="signupBtn" class="signup-btn">
+              <button
+                type="submit"
+                name="signup"
+                id="signupBtn"
+                class="signup-btn"
+              >
                 Sign up
               </button>
             </div>
@@ -109,63 +73,30 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
       $(() => {
-        $(".status").on("change", disableBtn);
-        
-        $('#signupBtn').on("click", () => {
-        	let jsonString = {
-        		"userName" : $("input[name=userName]").val(),
-        		"password" : $("input[name=password]").val(),
-        		"fullName" : $("input[name=fullName]").val(),
-        		"email" : $("input[name=email]").val()
-        	};
-        	$.ajax({
-        		type: "POST",
-        		url: "/studyabroad/user/register",
-        		data: JSON.stringify(jsonString),
-        		contentType: "application/json",
-        		scriptCharset: "utf-8"
-        	})
-        	.then((result) => {
-        		// does not show up
-            	alert("Successfully registered!");
-        	}, () => {
-        		alert("Registration has failed.");
-        	})
-        })
+        $("#signupBtn").on("click", () => {
+          let jsonString = {
+            userName: $("input[name=userName]").val(),
+            password: $("input[name=password]").val(),
+            fullName: $("input[name=fullName]").val(),
+            email: $("input[name=email]").val(),
+          };
+          $.ajax({
+            type: "POST",
+            url: "/studyabroad/user/register",
+            data: JSON.stringify(jsonString),
+            contentType: "application/json",
+            scriptCharset: "utf-8",
+          }).then(
+            (result) => {
+              // does not show up
+              alert("Successfully registered!");
+            },
+            () => {
+              alert("Registration has failed.");
+            }
+          );
+        });
       });
-      // Need to modify this function so it removes disabled when neither is checked
-      function disableBtn() {
-        let status = $(".status");
-        for (let i = 0; i < status.length; i++) {
-          if (!status[i].checked) {
-            status[i].disabled = true;
-          }
-        }
-      }
-
-      // For country select
-      const selector = $("#country-selector");
-      const countryName = [
-        "Japan",
-        "America",
-        "United Kingdom",
-        "Canada",
-        "Australia",
-        "New Zealand",
-        "Ireland",
-        "Italy",
-        "Germany",
-        "France",
-        "Singapore",
-        "Thailand",
-        "Vietnam",
-        "Philippines",
-      ];
-      countryName.forEach((country) =>
-        $("#country-selector").append(
-          "<option value=" + country + ">" + country + "</option>"
-        )
-      );
     </script>
   </body>
 </html>
