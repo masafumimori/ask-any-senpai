@@ -28,9 +28,9 @@ VALUES
 		1, "masa", "morimamama", "morimamama123", "morima123"
 	),
 	(
-		2, "yamada", "yamada", "yamada123", "yamada123"
+		2, "yamada", null , "yamada123", "yamada123"
 	),
 	(
-		3, "michael", "michael", "michael123", "michael123"
+		3, "michael", null , "michael123", "michael123"
 	)
 ;
