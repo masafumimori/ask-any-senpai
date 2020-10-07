@@ -28,6 +28,24 @@
     <div class="mypage-items">
       <p>メールアドレス：<span th:text="${user.email}"/></span></p>
     </div>
+    <div class="mypage-items" >
+      <p>留学した地域：
+        <span th:if="${user.area != null}" th:text="${user.area}"/></span>
+        <span th:if="${user.area == null}"/>未登録</span>
+      </p>
+    </div>
+    <div class="mypage-items">
+      <p>留学した国：
+        <span th:if="${user.nation != null}" th:text="${user.nation}"/>
+        </span><span th:if="${user.area == null}"/>未登録</span>
+    </p>
+    </div>
+    <div class="mypage-items">
+      <p>登録しているSNS：
+        <!-- <span th:if="${user.twitter != null}" th:text="${user.twitter}"/>
+        </span><span th:if="${user.twitter == null}"/>未登録</span> -->
+      </p>
+    </div>
 	</div>
     
         <!-- jQuery CDN -->
