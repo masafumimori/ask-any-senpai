@@ -82,7 +82,7 @@
             width: 70%;
             padding-top: 20px;
             @include flex-center();
-            .signup-btn {
+            #signupBtn {
               width: 50%;
               height: 35px;
               background: $blue;
@@ -92,7 +92,7 @@
               border: none;
               outline: none;
             }
-            .signup-btn:hover {
+            #signupBtn:hover {
               cursor: pointer;
               filter: contrast(200%);
             }

@@ -55,12 +55,7 @@
               />
             </div>
             <div class="form-btn">
-              <button
-                type="submit"
-                name="signup"
-                id="signupBtn"
-                class="signup-btn"
-              >
+              <button type="submit" name="signup" id="signupBtn">
                 Sign up
               </button>
             </div>
@@ -75,6 +70,7 @@
       $(() => {
         $("#signupBtn").on("click", (event) => {
           event.preventDefault();
+
           let jsonString = {
             userName: $("input[name=userName]").val(),
             password: $("input[name=password]").val(),
