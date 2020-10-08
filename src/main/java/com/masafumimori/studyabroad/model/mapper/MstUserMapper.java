@@ -17,7 +17,14 @@ public interface MstUserMapper {
 	@Options(useGeneratedKeys=true, keyProperty="id")
 	int insert(MstUser user);
 	
-	// FOr login
+	// For insert into SNS table
+	@Insert("INSERT INTO mst_user_sns (user_name)" +
+			"VALUES (#{userName}")
+	@Options(useGeneratedKeys=true, keyProperty="id")
+	int insert(@Param("userName") String userName);
+	
+	
+	// For login
 	UserSearchDto loginByUserNameAndPass(
 			@Param("userName") String userName,
 			@Param("password") String password
