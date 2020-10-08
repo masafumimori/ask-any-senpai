@@ -6,7 +6,7 @@ $(() => {
 
   //When pressing signup button
   $(".signup-btn").on("click", () => {
-    location.replace("/studyabroad/user//signup_page");
+    location.replace("/studyabroad/user/signup_page");
   });
 
   //When pressing mypage button
