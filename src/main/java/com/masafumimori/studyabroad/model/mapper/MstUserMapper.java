@@ -4,9 +4,9 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 
 import com.masafumimori.studyabroad.model.domain.MstUser;
+import com.masafumimori.studyabroad.model.domain.dto.UserSearchDto;
 
 @Mapper
 public interface MstUserMapper {
@@ -16,10 +16,9 @@ public interface MstUserMapper {
 			"VALUES (#{userName}, #{password}, #{email})")
 	@Options(useGeneratedKeys=true, keyProperty="id")
 	int insert(MstUser user);
-
-	//For login
-	@Select("SELECT * FROM mst_user WHERE user_name = #{userName} AND password = #{password}")
-	MstUser loginByUserNameAndPass(
+	
+	// FOr login
+	UserSearchDto loginByUserNameAndPass(
 			@Param("userName") String userName,
 			@Param("password") String password
 			);

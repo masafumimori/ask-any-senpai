@@ -300,9 +300,7 @@
           <div class="profile-img" th:if="${user.twitter != null}">
             <img
               th:src="@{'https://unavatar.now.sh/twitter/' + ${user.twitter}}"
-              alt=""
-              width="150px"
-              height="150px"
+              alt="Twitterプロフィール画像"
             />
           </div>
           <div class="profile-img" th:if="${user.twitter == null}">

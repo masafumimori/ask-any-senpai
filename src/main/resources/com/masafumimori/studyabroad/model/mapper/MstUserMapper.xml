@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.masafumimori.studyabroad.model.mapper.MstUserMapper">
+
+	<select id="loginByUserNameAndPass" resultType="com.masafumimori.studyabroad.model.domain.dto.UserSearchDto">
+		SELECT
+			user.user_name,
+			user.password,
+			user.email,
+			user.area,
+			user.password,
+			info.twitter,
+			info.instagram,
+			info.facebook
+		FROM
+			mst_user AS user
+		JOIN
+			mst_user_sns AS info
+		ON
+			user.id = info.user_id
+		WHERE
+			user.user_name = #{userName} AND user.password = #{password} 
+	</select>
+</mapper>

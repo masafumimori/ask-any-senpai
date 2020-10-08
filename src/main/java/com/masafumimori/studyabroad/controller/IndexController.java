@@ -1,6 +1,6 @@
 package com.masafumimori.studyabroad.controller;
 
-import com.masafumimori.studyabroad.model.domain.MstUser;
+import com.masafumimori.studyabroad.model.domain.dto.UserSearchDto;
 import com.masafumimori.studyabroad.model.mapper.MstUserMapper;
 import com.masafumimori.studyabroad.model.session.LoginSession;
 
@@ -24,7 +24,7 @@ public class IndexController {
 
 		if (loginSession.isLogined()) {
 
-			MstUser user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
+			UserSearchDto user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
 
 			m.addAttribute("user", user);
 			// m.addAttribute("loginSession", loginSession);
@@ -36,7 +36,7 @@ public class IndexController {
 	public String terms(Model m) {
 		if (loginSession.isLogined()) {
 
-			MstUser user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
+			UserSearchDto user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
 
 			m.addAttribute("user", user);
 			// m.addAttribute("loginSession", loginSession);
@@ -49,7 +49,7 @@ public class IndexController {
 	public String contact(Model m) {
 		if (loginSession.isLogined()) {
 
-			MstUser user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
+			UserSearchDto user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
 
 			m.addAttribute("user", user);
 			// m.addAttribute("loginSession", loginSession);

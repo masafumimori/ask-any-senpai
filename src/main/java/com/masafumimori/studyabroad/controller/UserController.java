@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.masafumimori.studyabroad.model.domain.MstUser;
+import com.masafumimori.studyabroad.model.domain.dto.UserSearchDto;
 import com.masafumimori.studyabroad.model.form.UserForm;
 import com.masafumimori.studyabroad.model.mapper.MstUserMapper;
 import com.masafumimori.studyabroad.model.session.LoginSession;
@@ -53,10 +54,9 @@ public class UserController {
 		String userName = f.getUserName();
 		String password = f.getPassword();
 
-		MstUser user = userMapper.loginByUserNameAndPass(userName, password);
+		UserSearchDto user = userMapper.loginByUserNameAndPass(userName, password);
 
 		if(user != null) {
-			loginSession.setUserId(user.getId());
 			loginSession.setUserName(user.getUserName());
 			loginSession.setPassword(user.getPassword());
 			loginSession.setLogined(true);
@@ -71,7 +71,7 @@ public class UserController {
 		String userName = loginSession.getUserName();
 		String password = loginSession.getPassword();
 
-		MstUser user = userMapper.loginByUserNameAndPass(userName, password);
+		UserSearchDto user = userMapper.loginByUserNameAndPass(userName, password);
 
 		m.addAttribute("user", user);
 		//m.addAttribute("loginSession", loginSession);
