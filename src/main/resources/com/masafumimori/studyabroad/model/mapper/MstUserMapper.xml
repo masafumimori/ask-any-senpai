@@ -2,13 +2,29 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.masafumimori.studyabroad.model.mapper.MstUserMapper">
-
+	
+	<!-- For update mst_user_sns update -->
+	<update id="updateMstUserSns">
+	UPDATE
+		mst_user_sns
+	SET
+		user_name = #{userName},
+		twitter = #{twitter},
+		instagram = #{instagram},
+		facebook = #{facebook}
+	WHERE
+		mst_user_sns.id = #{id}
+	</update>
+	
+	<!-- For login -->
 	<select id="loginByUserNameAndPass" resultType="com.masafumimori.studyabroad.model.domain.dto.UserSearchDto">
 		SELECT
+			user.id,
 			user.user_name,
 			user.password,
 			user.email,
 			user.area,
+			user.nation,
 			user.password,
 			info.twitter,
 			info.instagram,

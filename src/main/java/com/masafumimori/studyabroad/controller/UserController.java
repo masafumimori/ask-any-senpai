@@ -38,6 +38,7 @@ public class UserController {
 		MstUser user = new MstUser(f);
 
 		int count = userMapper.insert(user);
+		count += userMapper.addSns(f.getUserName());
 
 		return count > 0;
 	}
@@ -76,6 +77,34 @@ public class UserController {
 		m.addAttribute("user", user);
 		//m.addAttribute("loginSession", loginSession);
 
+		return "mypage";
+	}
+	
+	@RequestMapping("/mypage_edit")
+	public String mypageEdit(Model m) {
+		
+		String userName = loginSession.getUserName();
+		String password = loginSession.getPassword();
+
+		UserSearchDto user = userMapper.loginByUserNameAndPass(userName, password);
+
+		m.addAttribute("user", user);
+
+		return "mypage_edit";
+	}
+	
+	@RequestMapping("/update")
+	public String updateUser(@RequestBody UserForm f, Model m) {
+		
+		int count = userMapper.updateMstUser(f);
+		count += userMapper.updateMstUserSns(f);
+		
+		if(count > 0) {
+			UserSearchDto user = userMapper.loginByUserNameAndPass(f.getUserName(), f.getPassword());
+			
+			m.addAttribute("user", user);
+		}
+		
 		return "mypage";
 	}
 
