@@ -46,5 +46,13 @@ public interface MstUserMapper {
 			)
 	int updateMstUser(UserForm user);
 	
+	@Update("UPDATE mst_user_sns " +
+			"SET user_name = #{userName}, " +
+			"twitter = #{twitter}, " +
+			"instagram = #{instagram}, " +
+			"facebook = #{facebook}, " +
+			"updated_at = now() " +
+			"WHERE user_id = #{id}"
+			)
 	int updateMstUserSns(UserForm user);
 }
