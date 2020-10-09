@@ -22,12 +22,12 @@
         <h2>プロフィール編集</h2>
         <div class="mypage-img">
           <img
-            th:if="${user.twitter != null}"
+            th:if="${user.twitter != null && user.twitter != ''}"
             th:src="@{'https://unavatar.now.sh/twitter/' + ${user.twitter}}"
             alt="Twitterプロフィール画像"
           />
           <img
-            th:if="${user.twitter == null}"
+            th:if="${user.twitter == null || user.twitter == ''}"
             class="default-pic"
             src="/img/default-boy.png"
             alt="デフォルト画像"
@@ -71,7 +71,7 @@
           <input
             class="sns-input"
             name="twitter"
-            th:if="${user.twitter != null}"
+            th:if="${user.twitter != null && user.twitter != ''}"
             th:value="${user.twitter}"
           />
           <input
@@ -86,7 +86,7 @@
           <input
             class="sns-input"
             name="instagram"
-            th:if="${user.instagram != null}"
+            th:if="${user.instagram != null && user.instagram != ''}"
             th:value="${user.instagram}"
           />
           <input
@@ -101,7 +101,7 @@
           <input
             class="sns-input"
             name="facebook"
-            th:if="${user.facebook != null}"
+            th:if="${user.facebook != null && user.facebook != ''}"
             th:value="${user.facebook}"
           />
           <input

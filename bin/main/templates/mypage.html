@@ -20,14 +20,13 @@
     <section class="mypage">
       <div class="mypage-box">
        <h2>プロフィール</h2>
-       <div class="mypage-img" th:if="${user.twitter != null}">
+       <div class="mypage-img">
          <img
+           th:if="${user.twitter != null && user.twitter != ''}"
            th:src="@{'https://unavatar.now.sh/twitter/' + ${user.twitter}}"
            alt="Twitterプロフィール画像"
          />
-       </div>
-       <div class="mypage-img" th:if="${user.twitter == null}">
-         <img class="default-pic" src="/img/default-boy.png" alt="デフォルト画像" />
+         <img th:if="${user.twitter == null || user.twitter == ''}" class="default-pic" src="/img/default-boy.png" alt="デフォルト画像" />
        </div>
        <div class="mypage-items">
          <p>ユーザー名：<span th:text="${user.userName}"/></span></p>
@@ -52,7 +51,7 @@
        </div>
        <div class="mypage-items">
          <p>登録しているSNS：
-            <span th:if="${user.twitter == null && user.instagram == null && user.facebook == null}" th:text="未登録"></span>
+           <span th:if="${user.twitter == null || user.twitter == ''} and ${user.instagram == null || user.instagram == ''} and ${user.facebook == null || user.facebook == ''}" th:text="未登録"></span>
            <!-- Twitter -->
             <span th:if="${user.twitter == null || user.twitter == ''}" /></span>
             <span th:if="${user.twitter != null && user.twitter != ''}">
