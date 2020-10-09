@@ -41,17 +41,18 @@
        <div class="mypage-items" >
          <p>留学した地域：
            <span th:if="${user.area != null}" id="showArea"/></span>
-           <span th:if="${user.area == null}" th:text="未登録"/></span>
+           <span th:if="${user.area == null || user.area == ''}" th:text="未登録"/></span>
          </p>
        </div>
        <div class="mypage-items">
          <p>留学した国：
            <span th:if="${user.nation != null}" id="showNation"></span>
-           <span th:if="${user.nation == null}" th:text="未登録"/></span>
+           <span th:if="${user.nation == null || user.nation == ''}" th:text="未登録"/></span>
        </p>
        </div>
        <div class="mypage-items">
          <p>登録しているSNS：
+            <span th:if="${user.twitter == null && user.instagram == null && user.facebook == null}" th:text="未登録"></span>
            <!-- Twitter -->
             <span th:if="${user.twitter == null || user.twitter == ''}" /></span>
             <span th:if="${user.twitter != null && user.twitter != ''}">
@@ -84,7 +85,7 @@
             </span>
           </p>
        </div>
-       <div class="edit-box">
+       <div class="btn-box">
          <a href="/studyabroad/user/mypage_edit" class="edit-btn">プロフィール編集</a>
        </div>
       </div>

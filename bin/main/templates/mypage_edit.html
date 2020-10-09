@@ -20,14 +20,14 @@
     <section class="mypage">
       <div class="mypage-box">
         <h2>プロフィール編集</h2>
-        <div class="mypage-img" th:if="${user.twitter != null}">
+        <div class="mypage-img">
           <img
+            th:if="${user.twitter != null}"
             th:src="@{'https://unavatar.now.sh/twitter/' + ${user.twitter}}"
             alt="Twitterプロフィール画像"
           />
-        </div>
-        <div class="mypage-img" th:if="${user.twitter == null}">
           <img
+            th:if="${user.twitter == null}"
             class="default-pic"
             src="/img/default-boy.png"
             alt="デフォルト画像"
@@ -69,27 +69,49 @@
         <div class="mypage-input">
           <label>Twitter：</label>
           <input
+            class="sns-input"
             name="twitter"
             th:if="${user.twitter != null}"
             th:value="${user.twitter}"
+          />
+          <input
+            class="sns-input"
+            name="twitter"
+            th:if="${user.twitter == null || user.twitter == ''}"
+            th:placeholder="Twitterユーザー名を入力してください"
           />
         </div>
         <div class="mypage-input">
           <label>Instagram：</label>
           <input
+            class="sns-input"
             name="instagram"
             th:if="${user.instagram != null}"
             th:value="${user.instagram}"
+          />
+          <input
+            class="sns-input"
+            name="instagram"
+            th:if="${user.instagram == null || user.instagram == ''}"
+            th:placeholder="Instagramユーザー名を入力してください"
           />
         </div>
         <div class="mypage-input">
           <label>Facebook：</label>
           <input
+            class="sns-input"
             name="facebook"
             th:if="${user.facebook != null}"
             th:value="${user.facebook}"
           />
+          <input
+            class="sns-input"
+            name="facebook"
+            th:if="${user.facebook == null || user.facebook == ''}"
+            th:placeholder="Facebookユーザー名を入力してください"
+          />
         </div>
+
         <div class="btn-box">
           <input type="hidden" name="id" th:value="${user.id}" />
           <button id="finish-btn">プロフィール変更</button>
