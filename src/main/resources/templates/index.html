@@ -309,21 +309,21 @@
           <h3 class="userName" th:text="${user.userName}"></h3>
           <div class="sns-box">
             <a
-              th:if="${user.twitter != null}"
+              th:if="${user.twitter != null && user.twitter != ''}"
               th:href="@{'https://twitter.com/' + ${user.twitter}}"
               class="twitter"
               target="_blank"
               ><i class="fab fa-twitter"></i
             ></a>
             <a
-              th:if="${user.instagram != null}"
+              th:if="${user.instagram != null && user.instagram != ''}"
               th:href="@{'https://instagram.com/' + ${user.instagram}}"
               class="instagram"
               target="_blank"
               ><i class="fab fa-instagram"></i
             ></a>
             <a
-              th:if="${user.facebook != null}"
+              th:if="${user.facebook != null && user.facebook != ''}"
               th:href="@{'https://facebook.com/' + ${user.facebook}}"
               class="facebook"
               target="_blank"
