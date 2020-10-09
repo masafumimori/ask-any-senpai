@@ -20,6 +20,5 @@ CREATE TABLE mst_user_sns (
 	facebook VARCHAR(50),
 	created_at TIMESTAMP NOT NULL default now(),
 	updated_at TIMESTAMP NOT NULL default now(),
-	FOREIGN KEY(user_id) REFERENCES mst_user(id),
-	FOREIGN KEY(user_name) REFERENCES mst_user(user_name)
+	FOREIGN KEY(user_id) REFERENCES mst_user(id)
 );
