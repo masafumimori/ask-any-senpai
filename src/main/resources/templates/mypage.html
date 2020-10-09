@@ -52,34 +52,37 @@
        </div>
        <div class="mypage-items">
          <p>登録しているSNS：
-         <span th:if="${user.twitter == null || user.twitter == ''}" /></span>
-         <span th:if="${user.twitter != null && user.twitter != ''}">
-           <a
-           th:href="@{'https://twitter.com/' + ${user.twitter}}"
-           class="twitter"
-           target="_blank"
-           ><i class="fab fa-twitter"></i
-           ></a>
-         </span>
-         <span th:if="${user.instagram == null || user.instagram == ''}" /></span>
-         <span th:if="${user.instagram != null && user.instagram != ''}">
-           <a
-           th:href="@{'https://instagram.com/' + ${user.instagram}}"
-           class="instagram"
-           target="_blank"
-           ><i class="fab fa-instagram"></i
-           ></a>
-         </span>
-         <span th:if="${user.facebook == null || user.facebook == ''}" /></span>
-         <span th:if="${user.facebook != null && user.facebook != ''}">
-           <a
-           th:href="@{'https://facebook.com/' + ${user.facebook}}"
-           class="facebook"
-           target="_blank"
-           ><i class="fab fa-facebook"></i
-           ></a>
-         </span>
-         </p>
+           <!-- Twitter -->
+            <span th:if="${user.twitter == null || user.twitter == ''}" /></span>
+            <span th:if="${user.twitter != null && user.twitter != ''}">
+              <a
+              th:href="@{'https://twitter.com/' + ${user.twitter}}"
+              class="twitter"
+              target="_blank"
+              ><i class="fab fa-twitter"></i
+              ></a>
+            </span>
+            <!-- Instagram -->
+            <span th:if="${user.instagram == null || user.instagram == ''}" /></span>
+            <span th:if="${user.instagram != null && user.instagram != ''}">
+              <a
+              th:href="@{'https://instagram.com/' + ${user.instagram}}"
+              class="instagram"
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+              ></a>
+            </span>
+            <!-- Facebook -->
+            <span th:if="${user.facebook == null || user.facebook == ''}" /></span>
+            <span th:if="${user.facebook != null && user.facebook != ''}">
+              <a
+              th:href="@{'https://facebook.com/' + ${user.facebook}}"
+              class="facebook"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+              ></a>
+            </span>
+          </p>
        </div>
        <div class="edit-box">
          <a href="/studyabroad/user/mypage_edit" class="edit-btn">プロフィール編集</a>

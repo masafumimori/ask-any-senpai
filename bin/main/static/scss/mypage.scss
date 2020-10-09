@@ -48,6 +48,17 @@
           span {
             font-weight: 400;
           }
+          .fa-twitter {
+            color: $twitter;
+          }
+          .fa-instagram {
+            background: $instagram;
+            color: #fff;
+            border-radius: 3px;
+          }
+          .fa-facebook {
+            color: $facebook;
+          }
         }
       }
       .edit-box {
