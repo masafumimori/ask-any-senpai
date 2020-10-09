@@ -20,6 +20,7 @@
     <section class="mypage">
       <div class="mypage-box">
        <h2>プロフィール</h2>
+       <!-- Profile image-->
        <div class="mypage-img">
          <img
            th:if="${user.twitter != null && user.twitter != ''}"
@@ -28,27 +29,33 @@
          />
          <img th:if="${user.twitter == null || user.twitter == ''}" class="default-pic" src="/img/default-boy.png" alt="デフォルト画像" />
        </div>
+       <!-- User name -->
        <div class="mypage-items">
          <p>ユーザー名：<span th:text="${user.userName}"/></span></p>
        </div>
+       <!-- Password -->
        <div class="mypage-items">
          <p>パスワード：<span th:text="${user.password}"/></span></p>
        </div>
+       <!-- Email -->
        <div class="mypage-items">
          <p>メールアドレス：<span th:text="${user.email}"/></span></p>
        </div>
+       <!-- Area -->
        <div class="mypage-items" >
          <p>留学した地域：
-           <span th:if="${user.area != null}" id="showArea"/></span>
-           <span th:if="${user.area == null || user.area == ''}" th:text="未登録"/></span>
+            <span th:if="${user.area != null && user.area != ''}" id="showArea"></span>
+            <span th:if="${user.area == null || user.area == ''}" th:text="未登録"/></span>
          </p>
        </div>
+       <!-- Nation -->
        <div class="mypage-items">
          <p>留学した国：
-           <span th:if="${user.nation != null}" id="showNation"></span>
+           <span th:if="${user.nation != null && user.nation != ''}" id="showNation"></span>
            <span th:if="${user.nation == null || user.nation == ''}" th:text="未登録"/></span>
        </p>
        </div>
+       <!-- SNS -->
        <div class="mypage-items">
          <p>登録しているSNS：
            <span th:if="${user.twitter == null || user.twitter == ''} and ${user.instagram == null || user.instagram == ''} and ${user.facebook == null || user.facebook == ''}" th:text="未登録"></span>
@@ -84,6 +91,7 @@
             </span>
           </p>
        </div>
+       <!-- Button to edit page -->
        <div class="btn-box">
          <a href="/studyabroad/user/mypage_edit" class="edit-btn">プロフィール編集</a>
        </div>
@@ -98,17 +106,17 @@
 
       $(() => {
 
-        // Show area if it's set in DB
+        // Display AREA if it's set in DB
         Object.keys(areas).forEach((area) => {
           if(area == /*[[${user.area}]]*/){
             $('#showArea').text(areas[area]);
           }
         });
 
-        // Set default NATION according to data in DB
+        // Display NATION if it's set in DB
         Object.keys(nations).forEach((nation) => {
           if(nation == /*[[${user.nation}]]*/){
-            $('#showNation').val(nation).text(nations[nation]);
+            $('#showNation').text(nations[nation]);
           }
         });
 

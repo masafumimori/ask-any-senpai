@@ -49,20 +49,29 @@
         <div class="mypage-input">
           <label>留学した地域：</label>
           <select id="area-select" name="area">
-            <option th:if="${user.area == null}" value="default">
+            <option th:if="${user.area == null || user.area == ''}" value="">
               留学した地域を選んでください
             </option>
-            <option id="hasArea" th:if="${user.area != null}"></option>
+            <option
+              id="hasArea"
+              th:if="${user.area != null && user.area != ''}"
+            ></option>
           </select>
         </div>
         <!-- Nation selection -->
         <div class="mypage-input">
           <label>留学した国：</label>
           <select id="nation-select" name="nation">
-            <option th:if="${user.nation == null}" value="default">
+            <option
+              th:if="${user.nation == null || user.nation == ''}"
+              value=""
+            >
               留学した国を選んでください
             </option>
-            <option id="hasNation" th:if="${user.nation != null}"></option>
+            <option
+              id="hasNation"
+              th:if="${user.nation != null && user.nation != ''}"
+            ></option>
           </select>
         </div>
         <!-- SNS info -->
@@ -126,32 +135,24 @@
       /*<![CDATA[*/
 
       $(() => {
-        // Append options to area select
-        Object.keys(areas).forEach((area) => {
-          let options =
-            "<option value='" + area + "'>" + areas[area] + "</option>";
-          $("#area-select").append(options);
-        });
-
-        // Set default AREA according to data in DB
-        Object.keys(areas).forEach((area) => {
+         // Set default AREA based on DB and append options
+         Object.keys(areas).forEach((area) => {
+          let options = "<option value='" + area + "'>" + areas[area] + "</option>";
           if(area == /*[[${user.area}]]*/){
-            $('#hasArea').val(area).text(areas[area]);
+            $('option#hasArea').val(area).text(areas[area]);
           }
+
+          $("#area-select").append(options);
         });
 
         // Append options to nation select
         Object.keys(nations).forEach((nation) => {
-          let options =
-            "<option value='" + nation + "'>" + nations[nation] + "</option>";
-          $("#nation-select").append(options);
-        });
-
-        // Set default NATION according to data in DB
-        Object.keys(nations).forEach((nation) => {
+          let options = "<option value='" + nation + "'>" + nations[nation] + "</option>";
           if(nation == /*[[${user.nation}]]*/){
             $('#hasNation').val(nation).text(nations[nation]);
           }
+
+          $("#nation-select").append(options);
         });
 
         // To update profile info
