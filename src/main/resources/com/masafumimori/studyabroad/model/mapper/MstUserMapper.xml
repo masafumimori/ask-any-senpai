@@ -12,16 +12,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			user.email,
 			user.area,
 			user.nation,
-			info.twitter,
-			info.instagram,
-			info.facebook
+			sns.twitter,
+			sns.instagram,
+			sns.facebook
 		FROM
 			mst_user AS user
 		JOIN
-			mst_user_sns AS info
+			mst_user_sns AS sns
 		ON
-			user.id = info.user_id
+			user.id = sns.user_id
 		WHERE
 			user.user_name = #{userName} AND user.password = #{password} 
+	</select>
+	
+	<select id="findById" resultType="com.masafumimori.studyabroad.model.domain.dto.UserSearchDto">
+		SELECT
+			user.id,
+			user.user_name,
+			user.email,
+			user.area,
+			user.nation,
+			sns.twitter,
+			sns.instagram,
+			sns.facebook
+		FROM
+			mst_user AS user
+		JOIN
+			mst_user_sns AS sns
+		ON
+			user.id = sns.user_id
+		WHERE
+			user.id = #{id}
 	</select>
 </mapper>

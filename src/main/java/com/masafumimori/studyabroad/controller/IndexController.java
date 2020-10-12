@@ -7,6 +7,7 @@ import com.masafumimori.studyabroad.model.session.LoginSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -61,6 +62,16 @@ public class IndexController {
 	@RequestMapping("/policy")
 	public String policy() {
 		return "policy";
+	}
+	
+	@RequestMapping("senpai/{id}")
+	public String senpaiPage(@PathVariable("id") int id, Model m) {
+		
+		UserSearchDto senpai = userMapper.findById(id);
+		
+		m.addAttribute("senpai", senpai);
+		
+		return "senpai_detail";
 	}
 
 }

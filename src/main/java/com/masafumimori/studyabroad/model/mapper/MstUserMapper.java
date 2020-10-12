@@ -55,4 +55,7 @@ public interface MstUserMapper {
 			"WHERE user_id = #{id}"
 			)
 	int updateMstUserSns(UserForm user);
+	
+	
+	UserSearchDto findById(int id);
 }

@@ -5,16 +5,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 
 	<select id="findByAreaAndNation" resultType="com.masafumimori.studyabroad.model.domain.dto.UserSearchDto">
 		SELECT
+			user.id,
 			user.user_name,
-			info.twitter,
-			info.instagram,
-			info.facebook
+			sns.twitter,
+			sns.instagram,
+			sns.facebook
 		FROM
 			mst_user AS user
 		JOIN
-			mst_user_sns AS info
+			mst_user_sns AS sns
 		ON
-			user.id = info.user_id
+			user.id = sns.user_id
 		<where>
 			<if test="areas != null">
 			user.area in
