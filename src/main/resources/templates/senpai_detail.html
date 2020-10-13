@@ -57,7 +57,7 @@
        <!-- SNS -->
        <div class="senpai-items">
          <p>登録しているSNS：
-           <span th:if="${senpai.twitter == null || senpai.twitter == ''} and ${user.instagram == null || user.instagram == ''} and ${user.facebook == null || user.facebook == ''}" th:text="未登録"></span>
+           <span th:if="${senpai.twitter == null || senpai.twitter == ''} and ${senpai.instagram == null || senpai.instagram == ''} and ${senpai.facebook == null || senpai.facebook == ''}" th:text="未登録"></span>
            <!-- Twitter -->
             <span th:if="${senpai.twitter == null || senpai.twitter == ''}" /></span>
             <span th:if="${senpai.twitter != null && senpai.twitter != ''}">
