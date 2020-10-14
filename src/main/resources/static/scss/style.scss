@@ -146,127 +146,191 @@
       flex-wrap: wrap;
       .users-box {
         width: 32.5%;
-        height: fit-content;
+        height: 350px;
         background: #fff;
-        padding: 20px;
         border: 1px solid $dark;
-        border-radius: 20px;
         margin: 10px 0;
-        .profile-img {
-          width: 100%;
-          height: auto;
-          @include flex-center();
-          margin-bottom: 20px;
-          img {
-            width: 60%;
+        .info-area {
+          padding: 20px;
+          height: 50%;
+          .profile-img {
+            width: 100%;
             height: auto;
-            border-radius: 50%;
-            border: 5px solid $dark;
+            @include flex-center();
+            margin-bottom: 10px;
+            img {
+              width: 35%;
+              height: auto;
+              border-radius: 50%;
+              border: 2px solid $dark;
+            }
+            .default-pic {
+              border: none;
+            }
           }
-          .default-pic {
-            border: none;
+          .userName {
+            font-size: 1.3rem;
+            font-weight: 600;
+          }
+          .sns-box {
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            .twitter,
+            .instagram,
+            .facebook {
+              width: 20%;
+              height: auto;
+              text-align: center;
+              .fa-twitter,
+              .fa-instagram,
+              .fa-facebook {
+                font-size: 20px;
+              }
+              .fa-twitter {
+                color: $twitter;
+              }
+              .fa-instagram {
+                background: $instagram;
+                color: white;
+                width: 20px;
+                height: 20px;
+                border-radius: 5px;
+              }
+              .fa-facebook {
+                color: $facebook;
+              }
+            }
           }
         }
-        .userName {
-          font-size: 1.5rem;
-          font-weight: 600;
-        }
-        .sns-box {
+        .link-area {
           width: 100%;
-          margin-top: 20px;
-          display: flex;
-          justify-content: space-around;
-          .twitter,
-          .instagram,
-          .facebook {
-            width: 30%;
-            height: auto;
-            text-align: center;
-            .fa-twitter,
-            .fa-instagram,
-            .fa-facebook {
-              font-size: 40px;
-            }
-            .fa-twitter {
-              color: $twitter;
-            }
-            .fa-instagram {
-              background: $instagram;
-              color: white;
-              width: 40px;
-              height: 40px;
-              border-radius: 10px;
-            }
-            .fa-facebook {
-              color: $facebook;
-            }
+          height: 50%;
+          margin: 0 auto;
+          position: relative;
+          // background-image: url("../img/background01.jpg");
+          // background-size: cover;
+          // background-repeat: no-repeat;
+          &::after {
+            content: "もっと詳しく";
+            display: block;
+            width: 80%;
+            height: 15%;
+            background: $dark;
+            color: #fff;
+            font-size: 0.9rem;
+            @include flex-center();
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            cursor: pointer;
           }
+          .senpai-link {
+            display: block;
+            height: 100%;
+            width: 100%;
+            @include flex-center();
+            background: transparent;
+          }
+        }
+        .link-area:hover {
+          &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            opacity: 0.3;
+            cursor: pointer;
+            position: absolute;
+          }
+        }
+        // For setting background images in link-area
+        .link-area-bg1 {
+          background-image: url("../img/background01.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        .link-area-bg2 {
+          background-image: url("../img/background02.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        .link-area-bg3 {
+          background-image: url("../img/background03.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        .link-area-bg4 {
+          background-image: url("../img/background04.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
         }
       }
     }
-    //Terms & policy section CSS
-    .terms,
-    .policy {
-      width: 100%;
+  }
+  //Terms & policy section CSS
+  .terms,
+  .policy {
+    width: 100%;
+    height: 100%;
+    padding: 20vh 0 10vh;
+    background: $background-white;
+    .back-btn {
+      position: absolute;
+      top: 15vh;
+      left: 5%;
+      font-size: 0.9rem;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+    .terms-box,
+    .policy-box {
+      width: 90%;
       height: 100%;
-      padding: 20vh 0 10vh;
-      background: $background-white;
-      .back-btn {
-        position: absolute;
-        top: 15vh;
-        left: 5%;
+      margin: 0 auto;
+      background: #fff;
+      padding: 60px 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
+      h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      p {
+        line-height: 1.4rem;
         font-size: 0.9rem;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-          cursor: pointer;
+      }
+      .terms-items,
+      .policy-items {
+        margin: 40px 0;
+        width: 100%;
+        h2 {
+          font-size: 1.3rem;
+          font-weight: 700;
+          margin: 20px 10px;
+          padding-bottom: 5px;
+          border-bottom: 2px solid $dark-blue;
+        }
+        .terms-content,
+        .policy-content {
+          line-height: 1.5rem;
+          font-size: 0.9rem;
+          margin: 10px 0;
+        }
+        p.terms-content,
+        p.policy-content {
+          padding-left: 30px;
         }
       }
-      .terms-box,
-      .policy-box {
-        width: 90%;
-        height: 100%;
-        margin: 0 auto;
-        background: #fff;
-        padding: 60px 40px;
-        border-radius: 20px;
-        box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
-        h1 {
-          font-size: 2rem;
-          font-weight: 700;
-          margin-bottom: 20px;
-        }
-        p {
-          line-height: 1.4rem;
-          font-size: 0.9rem;
-        }
-        .terms-items,
-        .policy-items {
-          margin: 40px 0;
-          width: 100%;
-          h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin: 20px 10px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid $dark-blue;
-          }
-          .terms-content,
-          .policy-content {
-            line-height: 1.5rem;
-            font-size: 0.9rem;
-            margin: 10px 0;
-          }
-          p.terms-content,
-          p.policy-content {
-            padding-left: 30px;
-          }
-        }
-        .end {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-        }
+      .end {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
       }
     }
   }

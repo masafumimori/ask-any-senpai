@@ -283,7 +283,12 @@
 
           <!-- Search button -->
           <div class="form-btn">
-            <button type="submit" name="submit" class="submit-btn">
+            <button
+              type="submit"
+              name="submit"
+              class="submit-btn"
+              id="search-btn"
+            >
               <i class="fas fa-search"></i>
               検索
             </button>
@@ -297,45 +302,47 @@
       <h2>検索結果</h2>
       <div class="result-box">
         <div class="users-box" th:each="user: ${users}">
-          <div class="profile-img" th:if="${user.twitter != null}">
-            <img
-              th:src="@{'https://unavatar.now.sh/twitter/' + ${user.twitter}}"
-              alt="Twitterプロフィール画像"
-            />
+          <div class="info-area">
+            <div class="profile-img" th:if="${user.twitter != null}">
+              <img
+                th:src="@{'https://unavatar.now.sh/twitter/' + ${user.twitter}}"
+                alt="Twitterプロフィール画像"
+              />
+            </div>
+            <div class="profile-img" th:if="${user.twitter == null}">
+              <img class="default-pic" src="/img/default-boy.png" alt="" />
+            </div>
+            <h3 class="userName" th:text="${user.userName}"></h3>
+            <div class="sns-box">
+              <a
+                th:if="${user.twitter != null && user.twitter != ''}"
+                th:href="@{'https://twitter.com/' + ${user.twitter}}"
+                class="twitter"
+                target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                th:if="${user.instagram != null && user.instagram != ''}"
+                th:href="@{'https://instagram.com/' + ${user.instagram}}"
+                class="instagram"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                th:if="${user.facebook != null && user.facebook != ''}"
+                th:href="@{'https://facebook.com/' + ${user.facebook}}"
+                class="facebook"
+                target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </div>
           </div>
-          <div class="profile-img" th:if="${user.twitter == null}">
-            <img class="default-pic" src="/img/default-boy.png" alt="" />
-          </div>
-          <h3 class="userName" th:text="${user.userName}"></h3>
-          <div class="sns-box">
+          <div class="link-area">
             <a
-              th:if="${user.twitter != null && user.twitter != ''}"
-              th:href="@{'https://twitter.com/' + ${user.twitter}}"
-              class="twitter"
-              target="_blank"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a
-              th:if="${user.instagram != null && user.instagram != ''}"
-              th:href="@{'https://instagram.com/' + ${user.instagram}}"
-              class="instagram"
-              target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              th:if="${user.facebook != null && user.facebook != ''}"
-              th:href="@{'https://facebook.com/' + ${user.facebook}}"
-              class="facebook"
-              target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </div>
-          <div class="link-box">
-            <a
+              class="senpai-link"
               href="/studyabroad/senpai"
               th:href="@{/studyabroad/senpai/{id}(id=${user.id})}"
-              >詳しく見る</a
-            >
+            ></a>
           </div>
         </div>
       </div>
@@ -363,6 +370,7 @@
       $(() => {
         $("#short-study").on("change", shortBtnChange);
         $("#long-study").on("change", longBtnChange);
+        $("#search-btn").on("click", imgHandler);
       });
 
       function shortBtnChange() {
@@ -381,6 +389,19 @@
           console.log("true");
         }
         $(".long-uni").prop("disabled", disabled);
+      }
+
+      function imgHandler() {
+        if ($(".link-area") != null) {
+          let linkAreaDivs = $(".link-area");
+
+          for (i = 0; i < linkAreaDivs.length; i++) {
+            let n = Math.floor(Math.random() * (4 - 1) + 1);
+            $(linkAreaDivs[i])
+              .find(".senpai-link")
+              .addClass("link-area-bg" + n);
+          }
+        }
       }
     </script>
   </body>
