@@ -1,4 +1,22 @@
 $(() => {
+  //Change opacity of scroll button
+  const scrollTop = $(".scroll-top");
+  $(window).scroll(function(){
+    let position = $(this).scrollTop();
+
+    if(position > 100){
+      $(scrollTop).css("opacity", "1");
+    } else {
+      $(scrollTop).css("opacity", "0");
+    }
+  });
+  //When pressing scroll top button
+  $(".scroll-top").on("click", function(){
+    $("html, body").animate({
+      scrollTop: 0
+    }, 500);
+  });
+
   //When pressing login button
   $(".login-btn").on("click", () => {
     location.replace("/studyabroad/user/login_page");
