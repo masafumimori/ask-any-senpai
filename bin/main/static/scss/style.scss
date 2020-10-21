@@ -208,9 +208,9 @@
           height: 50%;
           margin: 0 auto;
           position: relative;
-          // background-image: url("../img/background01.jpg");
-          // background-size: cover;
-          // background-repeat: no-repeat;
+          background-image: url("../img/background02.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
           &::after {
             content: "もっと詳しく";
             display: block;
@@ -231,18 +231,6 @@
             width: 100%;
             @include flex-center();
             background: transparent;
-          }
-        }
-        .link-area:hover {
-          &::before {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            opacity: 0.3;
-            cursor: pointer;
-            position: absolute;
           }
         }
         // For setting background images in link-area

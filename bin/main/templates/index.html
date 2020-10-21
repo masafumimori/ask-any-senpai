@@ -298,9 +298,9 @@
     </section>
 
     <!-- Result section -->
-    <div class="search-result" th:if="${users != null}">
-      <h2>検索結果</h2>
-      <div class="result-box">
+    <div class="search-result" id="search-result">
+      <h2　th:if="${users != null}">検索結果</h2>
+      <div class="result-box"　th:if="${users != null}">
         <div class="users-box" th:each="user: ${users}">
           <div class="info-area">
             <div class="profile-img" th:if="${user.twitter != null}">
@@ -370,7 +370,37 @@
       $(() => {
         $("#short-study").on("change", shortBtnChange);
         $("#long-study").on("change", longBtnChange);
-        $("#search-btn").on("click", imgHandler);
+
+        let searchResult = document.getElementById("search-result");
+
+        let mutationObserver = new MutationObserver(function(){
+          let users = $(".result-box").child();
+          if(users != null){
+              let linkAreaDivs = $(".link-area");
+              let imgPath = [
+              "../img/background01.jpg",
+              "../img/background02.jpg",
+              "../img/background03.jpg",
+              "../img/background04.jpg"
+              ];
+
+            if ($(linkAreaDivs) != null) {
+              for (i = 0; i < linkAreaDivs.length; i++) {
+                let n = Math.floor(Math.random() * (4 - 1) + 1);
+                $(linkAreaDivs[i]).css("background", `url(${imgPath[n]})`);
+              }
+            }
+          }
+          mutationObserver.disconnect();
+        });
+
+        mutationObserver.observe(
+          searchResult,
+          {
+            childList: true,
+            subtree: true
+          }
+        );
       });
 
       function shortBtnChange() {
@@ -392,15 +422,25 @@
       }
 
       function imgHandler() {
-        if ($(".link-area") != null) {
-          let linkAreaDivs = $(".link-area");
 
-          for (i = 0; i < linkAreaDivs.length; i++) {
-            let n = Math.floor(Math.random() * (4 - 1) + 1);
-            $(linkAreaDivs[i])
-              .find(".senpai-link")
-              .addClass("link-area-bg" + n);
+        let users = $(".result-box").child();
+
+        if(users != null){
+          let linkAreaDivs = $(".link-area");
+          let imgPath = [
+          "../img/background01.jpg",
+          "../img/background02.jpg",
+          "../img/background03.jpg",
+          "../img/background04.jpg"
+          ]
+
+          if ($(linkAreaDivs) != null) {
+            for (i = 0; i < linkAreaDivs.length; i++) {
+              let n = Math.floor(Math.random() * (4 - 1) + 1);
+              $(linkAreaDivs[i]).css("background", `url(${imgPath[n]})`);
+            }
           }
+
         }
       }
     </script>
