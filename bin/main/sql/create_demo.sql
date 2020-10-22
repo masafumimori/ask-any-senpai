@@ -46,7 +46,7 @@ VALUES
 		"demo13", "demo", "demo@email.com", "asia", "china"
     ),
 	(
-		"demo14", "demo", "demo@email.com", "ociania", "australia"
+		"demo14", "demo", "demo@email.com", "oceania", "australia"
     )
 ;
 
