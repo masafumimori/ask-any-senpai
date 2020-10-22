@@ -22,10 +22,10 @@
     <!-- Landing top -->
     <section class="land-top">
       <div class="top-content">
-        <h2>留学についてなんでも答えます。</h2>
+        <h2>留学についてなんでも聞いてみましょう。</h2>
         <p>
           少しでも不安なことがあれば、なんでも先輩に聞いてみましょう。<br />
-          これから海外留学を考えている方のためのサービスです。
+          これから海外留学を考えている方をサポートするためのサービスです。
         </p>
       </div>
     </section>
@@ -299,38 +299,38 @@
 
     <!-- Result section -->
     <div class="search-result" id="search-result">
-      <h2　th:if="${users != null}">検索結果</h2>
-      <div class="result-box"　th:if="${users != null}">
-        <div class="users-box" th:each="user: ${users}">
+      <h2 th:if="${matchedUsers != null}">検索結果</h2>
+      <div class="result-box" th:if="${matchedUsers != null}">
+        <div class="users-box" th:each="matchedUser, stat: ${matchedUsers}">
           <div class="info-area">
-            <div class="profile-img" th:if="${user.twitter != null}">
+            <div class="profile-img" th:if="${matchedUser.twitter != null}">
               <img
                 th:src="@{'https://unavatar.now.sh/twitter/' + ${user.twitter}}"
                 alt="Twitterプロフィール画像"
               />
             </div>
-            <div class="profile-img" th:if="${user.twitter == null}">
+            <div class="profile-img" th:if="${matchedUser.twitter == null}">
               <img class="default-pic" src="/img/default-boy.png" alt="" />
             </div>
-            <h3 class="userName" th:text="${user.userName}"></h3>
+            <h3 class="userName" th:text="${matchedUser.userName}"></h3>
             <div class="sns-box">
               <a
-                th:if="${user.twitter != null && user.twitter != ''}"
-                th:href="@{'https://twitter.com/' + ${user.twitter}}"
+                th:if="${matchedUser.twitter != null && matchedUser.twitter != ''}"
+                th:href="@{'https://twitter.com/' + ${matchedUser.twitter}}"
                 class="twitter"
                 target="_blank"
                 ><i class="fab fa-twitter"></i
               ></a>
               <a
-                th:if="${user.instagram != null && user.instagram != ''}"
-                th:href="@{'https://instagram.com/' + ${user.instagram}}"
+                th:if="${matchedUser.instagram != null && matchedUser.instagram != ''}"
+                th:href="@{'https://instagram.com/' + ${matchedUser.instagram}}"
                 class="instagram"
                 target="_blank"
                 ><i class="fab fa-instagram"></i
               ></a>
               <a
-                th:if="${user.facebook != null && user.facebook != ''}"
-                th:href="@{'https://facebook.com/' + ${user.facebook}}"
+                th:if="${matchedUser.facebook != null && matchedUser.facebook != ''}"
+                th:href="@{'https://facebook.com/' + ${matchedUser.facebook}}"
                 class="facebook"
                 target="_blank"
                 ><i class="fab fa-facebook"></i
@@ -341,7 +341,8 @@
             <a
               class="senpai-link"
               href="/studyabroad/senpai"
-              th:href="@{/studyabroad/senpai/{id}(id=${user.id})}"
+              th:href="@{/studyabroad/senpai/{id}(id=${matchedUser.id})}"
+              th:classappend="link-area-bg + ${stat.count}"
             ></a>
           </div>
         </div>
@@ -371,36 +372,36 @@
         $("#short-study").on("change", shortBtnChange);
         $("#long-study").on("change", longBtnChange);
 
-        let searchResult = document.getElementById("search-result");
+        // let searchResult = document.getElementById("search-result");
 
-        let mutationObserver = new MutationObserver(function(){
-          let users = $(".result-box").child();
-          if(users != null){
-              let linkAreaDivs = $(".link-area");
-              let imgPath = [
-              "../img/background01.jpg",
-              "../img/background02.jpg",
-              "../img/background03.jpg",
-              "../img/background04.jpg"
-              ];
+        // let mutationObserver = new MutationObserver(function(){
+        //   let users = $(".result-box").child();
+        //   if(users != null){
+        //       let linkAreaDivs = $(".link-area");
+        //       let imgPath = [
+        //       "../img/background01.jpg",
+        //       "../img/background02.jpg",
+        //       "../img/background03.jpg",
+        //       "../img/background04.jpg"
+        //       ];
 
-            if ($(linkAreaDivs) != null) {
-              for (i = 0; i < linkAreaDivs.length; i++) {
-                let n = Math.floor(Math.random() * (4 - 1) + 1);
-                $(linkAreaDivs[i]).css("background", `url(${imgPath[n]})`);
-              }
-            }
-          }
-          mutationObserver.disconnect();
-        });
+        //     if ($(linkAreaDivs) != null) {
+        //       for (i = 0; i < linkAreaDivs.length; i++) {
+        //         let n = Math.floor(Math.random() * (4 - 1) + 1);
+        //         $(linkAreaDivs[i]).css("background", `url(${imgPath[n]})`);
+        //       }
+        //     }
+        //   }
+        //   mutationObserver.disconnect();
+        // });
 
-        mutationObserver.observe(
-          searchResult,
-          {
-            childList: true,
-            subtree: true
-          }
-        );
+        // mutationObserver.observe(
+        //   searchResult,
+        //   {
+        //     childList: true,
+        //     subtree: true
+        //   }
+        // );
       });
 
       function shortBtnChange() {
@@ -421,28 +422,29 @@
         $(".long-uni").prop("disabled", disabled);
       }
 
-      function imgHandler() {
+      // function imgHandler() {
 
-        let users = $(".result-box").child();
+      //   let users = $(".result-box").child();
 
-        if(users != null){
-          let linkAreaDivs = $(".link-area");
-          let imgPath = [
-          "../img/background01.jpg",
-          "../img/background02.jpg",
-          "../img/background03.jpg",
-          "../img/background04.jpg"
-          ]
+      //   if(users != null){
+      //     let linkAreaDivs = $(".link-area");
+      //     let imgPath = [
+      //     "../img/background01.jpg",
+      //     "../img/background02.jpg",
+      //     "../img/background03.jpg",
+      //     "../img/background04.jpg"
+      //     ]
 
-          if ($(linkAreaDivs) != null) {
-            for (i = 0; i < linkAreaDivs.length; i++) {
-              let n = Math.floor(Math.random() * (4 - 1) + 1);
-              $(linkAreaDivs[i]).css("background", `url(${imgPath[n]})`);
-            }
-          }
+      //     if ($(linkAreaDivs) != null) {
+      //       for (i = 0; i < linkAreaDivs.length; i++) {
+      //         let n = Math.floor(Math.random() * (4 - 1) + 1);
+      //         $(linkAreaDivs[i]).css("background", `url(${imgPath[n]})`);
+      //       }
+      //     }
 
-        }
-      }
+      //   }
+      // }
+    
     </script>
   </body>
 </html>

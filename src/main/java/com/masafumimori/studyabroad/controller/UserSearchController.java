@@ -29,7 +29,8 @@ public class UserSearchController {
 	@RequestMapping("/")
 	public String searchUser(SearchForm s, Model m) {
 
-		List<UserSearchDto> users;
+		List<UserSearchDto> matchedUsers;
+		int matchedUserCount = 0;
 		String[] areas;
 		String[] nations;
 
@@ -49,10 +50,11 @@ public class UserSearchController {
 		}
 
 		if (keywords == null) {
-			users = searchMapper.findByAreaAndNation(areas, nations);
+			matchedUsers = searchMapper.findByAreaAndNation(areas, nations);
+			matchedUserCount = matchedUsers.size();
 		} else {
 			// Code to search with keywords and areas/nations
-			users = null;
+			matchedUsers = null;
 		}
 		
 		String userName = loginSession.getUserName();
@@ -62,7 +64,8 @@ public class UserSearchController {
 
 		m.addAttribute("user", user);
 
-		m.addAttribute("users", users);
+		m.addAttribute("matchedUsers", matchedUsers);
+		m.addAttribute("matchedUserCount", matchedUserCount);
 
 		return "index";
 	}

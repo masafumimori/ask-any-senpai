@@ -208,9 +208,10 @@
           height: 50%;
           margin: 0 auto;
           position: relative;
-          background-image: url("../img/background02.jpg");
-          background-size: cover;
-          background-repeat: no-repeat;
+          opacity: 0.75;
+          &:hover {
+            opacity: 1;
+          }
           &::after {
             content: "もっと詳しく";
             display: block;
@@ -230,29 +231,32 @@
             height: 100%;
             width: 100%;
             @include flex-center();
-            background: transparent;
+            background-size: cover;
+            background-repeat: no-repeat;
           }
-        }
-        // For setting background images in link-area
-        .link-area-bg1 {
-          background-image: url("../img/background01.jpg");
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-        .link-area-bg2 {
-          background-image: url("../img/background02.jpg");
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-        .link-area-bg3 {
-          background-image: url("../img/background03.jpg");
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-        .link-area-bg4 {
-          background-image: url("../img/background04.jpg");
-          background-size: cover;
-          background-repeat: no-repeat;
+
+          // For setting background images
+          .link-area-bg1 {
+            background-image: url("../img/background01.jpg");
+          }
+          .link-area-bg2 {
+            background-image: url("../img/background02.jpg");
+          }
+          .link-area-bg3 {
+            background-image: url("../img/background03.jpg");
+          }
+          .link-area-bg4 {
+            background-image: url("../img/background04.jpg");
+          }
+          .link-area-bg5 {
+            background-image: url("../img/background05.jpg");
+          }
+          .link-area-bg6 {
+            background-image: url("../img/background06.jpg");
+          }
+          .link-area-bg7 {
+            background-image: url("../img/background07.jpg");
+          }
         }
       }
     }
