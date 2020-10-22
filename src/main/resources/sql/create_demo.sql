@@ -98,7 +98,5 @@ VALUES
 	),
 	(
 		14, "demo14", null , "demo", "demo"
-	)
-,
-	
+	)	
 ;
