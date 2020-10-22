@@ -298,14 +298,14 @@
     </section>
 
     <!-- Result section -->
-    <div class="search-result" id="search-result">
+    <div class="search-result">
       <h2 th:if="${matchedUsers != null}">検索結果</h2>
       <div class="result-box" th:if="${matchedUsers != null}">
         <div class="users-box" th:each="matchedUser, stat: ${matchedUsers}">
           <div class="info-area">
             <div class="profile-img" th:if="${matchedUser.twitter != null}">
               <img
-                th:src="@{'https://unavatar.now.sh/twitter/' + ${user.twitter}}"
+                th:src="@{'https://unavatar.now.sh/twitter/' + ${matchedUser.twitter}}"
                 alt="Twitterプロフィール画像"
               />
             </div>
@@ -342,7 +342,7 @@
               class="senpai-link"
               href="/studyabroad/senpai"
               th:href="@{/studyabroad/senpai/{id}(id=${matchedUser.id})}"
-              th:classappend="link-area-bg + ${stat.count}"
+              th:classappend="link-area-bg + ${stat.count < 10? stat.count : matchedUserCount - stat.count}"
             ></a>
           </div>
         </div>
@@ -372,36 +372,6 @@
         $("#short-study").on("change", shortBtnChange);
         $("#long-study").on("change", longBtnChange);
 
-        // let searchResult = document.getElementById("search-result");
-
-        // let mutationObserver = new MutationObserver(function(){
-        //   let users = $(".result-box").child();
-        //   if(users != null){
-        //       let linkAreaDivs = $(".link-area");
-        //       let imgPath = [
-        //       "../img/background01.jpg",
-        //       "../img/background02.jpg",
-        //       "../img/background03.jpg",
-        //       "../img/background04.jpg"
-        //       ];
-
-        //     if ($(linkAreaDivs) != null) {
-        //       for (i = 0; i < linkAreaDivs.length; i++) {
-        //         let n = Math.floor(Math.random() * (4 - 1) + 1);
-        //         $(linkAreaDivs[i]).css("background", `url(${imgPath[n]})`);
-        //       }
-        //     }
-        //   }
-        //   mutationObserver.disconnect();
-        // });
-
-        // mutationObserver.observe(
-        //   searchResult,
-        //   {
-        //     childList: true,
-        //     subtree: true
-        //   }
-        // );
       });
 
       function shortBtnChange() {
@@ -422,29 +392,6 @@
         $(".long-uni").prop("disabled", disabled);
       }
 
-      // function imgHandler() {
-
-      //   let users = $(".result-box").child();
-
-      //   if(users != null){
-      //     let linkAreaDivs = $(".link-area");
-      //     let imgPath = [
-      //     "../img/background01.jpg",
-      //     "../img/background02.jpg",
-      //     "../img/background03.jpg",
-      //     "../img/background04.jpg"
-      //     ]
-
-      //     if ($(linkAreaDivs) != null) {
-      //       for (i = 0; i < linkAreaDivs.length; i++) {
-      //         let n = Math.floor(Math.random() * (4 - 1) + 1);
-      //         $(linkAreaDivs[i]).css("background", `url(${imgPath[n]})`);
-      //       }
-      //     }
-
-      //   }
-      // }
-    
     </script>
   </body>
 </html>
