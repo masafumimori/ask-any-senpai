@@ -54,50 +54,10 @@
             <legend><i class="fas fa-globe-africa"></i> 地域・国名</legend>
             <div class="area-nations">
               <div class="area-box">
-                <!-- <div class="areas">
-                  <input
-                    type="checkbox"
-                    name="areas"
-                    id="asia"
-                    class="area"
-                    th:value="asia"
-                  />
-                  <label for="asia" class="area-name">アジア</label>
-                </div>
-                <div class="areas">
-                  <input
-                    type="checkbox"
-                    name="areas"
-                    id="europe"
-                    class="area"
-                    th:value="europe"
-                  />
-                  <label for="europe" class="area-name">ヨーロッパ</label>
-                </div>
-                <div class="areas">
-                  <input
-                    type="checkbox"
-                    name="areas"
-                    id="america"
-                    class="area"
-                    value="america"
-                  />
-                  <label for="america" class="area-name">アメリカ</label>
-                </div>
-                <div class="areas">
-                  <input
-                    type="checkbox"
-                    name="areas"
-                    id="africa"
-                    class="area"
-                    value="africa"
-                  />
-                  <label for="africa" class="area-name">アフリカ</label>
-                </div> -->
               </div>
               <!-- Nations -->
               <div class="nation-box">
-                <div class="nations">
+                <!-- <div class="nations">
                   <input
                     type="checkbox"
                     name="nations"
@@ -196,7 +156,7 @@
                     value="southafrica"
                   />
                   <label for="southafrica" class="area-name">南アフリカ</label>
-                </div>
+                </div> -->
               </div>
             </div>
           </fieldset>
@@ -383,7 +343,18 @@
           let areaContent = $(areaDiv).append($(areaInput)).append($(areaLabels));
           $(areaBox).append($(areaContent));
         });
-        
+
+        // Append nations to search form        
+        let nationBox = $(".nation-box");
+        let nationDiv = "<div class='nations'></div>";
+        Object.keys(nations).forEach((nation) => {
+          let nationInput = "<input type='checkbox' name='nations' class='area' value='" + nation + "'/>";
+          let nationLabels = "<label for='" + nation + "class='area-name'>" + nations[nation] + "</label>";
+          let nationContent = $(nationDiv).append($(nationInput)).append($(nationLabels));
+          $(nationBox).append($(nationContent));
+        });
+
+
       });
 
       function shortBtnChange() {
