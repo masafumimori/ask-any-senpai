@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.masafumimori.studyabroad.model.mapper.UserSearchMapper">
 
-	<select id="findByAreaAndNation" resultType="com.masafumimori.studyabroad.model.domain.dto.UserSearchDto">
+	<select id="findMatchedUser" resultType="com.masafumimori.studyabroad.model.domain.dto.UserSearchDto">
 		SELECT
 			user.id,
 			user.user_name,
@@ -27,6 +27,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			OR user.nation in
 				<foreach item="nation" collection="nations" open="(" close=")" separator="," index="index">
 					#{nation}
+				</foreach>
+			</if>
+			<if test="purposes != null">
+			OR user.purpose in
+				<foreach item="purpose" collection="purposes" open="(" close=")" separator="," index="index">
+					#{purpose}
 				</foreach>
 			</if>
 		</where>

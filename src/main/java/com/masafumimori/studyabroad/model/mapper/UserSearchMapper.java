@@ -10,8 +10,9 @@ import com.masafumimori.studyabroad.model.domain.dto.UserSearchDto;
 @Mapper
 public interface UserSearchMapper {
 
-	public List<UserSearchDto> findByAreaAndNation(
+	public List<UserSearchDto> findMatchedUser(
 			@Param("areas") String[] areas,
-			@Param("nations") String[] nations
+			@Param("nations") String[] nations,
+			@Param("purposes") String[] purposes
 			);
 }

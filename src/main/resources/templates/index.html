@@ -57,106 +57,6 @@
               </div>
               <!-- Nations -->
               <div class="nation-box">
-                <!-- <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="japan"
-                    class="area"
-                    value="japan"
-                  />
-                  <label for="japan" class="area-name">日本</label>
-                </div>
-                <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="america"
-                    class="area"
-                    value="america"
-                  />
-                  <label for="america" class="area-name">アメリカ</label>
-                </div>
-                <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="china"
-                    class="area"
-                    value="china"
-                  />
-                  <label for="china" class="area-name">中国</label>
-                </div>
-                <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="england"
-                    class="area"
-                    value="england"
-                  />
-                  <label for="england" class="area-name">イギリス</label>
-                </div>
-                <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="germany"
-                    class="area"
-                    value="germany"
-                  />
-                  <label for="germany" class="area-name">ドイツ </label>
-                </div>
-                <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="korea"
-                    class="area"
-                    value="korea"
-                  />
-                  <label for="korea" class="area-name">韓国</label>
-                </div>
-                <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="taiwan"
-                    class="area"
-                    value="taiwan"
-                  />
-                  <label for="taiwan" class="area-name">台湾</label>
-                </div>
-                <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="singapore"
-                    class="area"
-                    value="singapore"
-                  />
-                  <label for="singapore" class="area-name">シンガポール</label>
-                </div>
-                <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="vietnam"
-                    class="area"
-                    value="vietnam"
-                  />
-                  <label for="vietnam" class="area-name">ベトナム</label>
-                </div>
-                <div class="nations">
-                  <input
-                    type="checkbox"
-                    name="nations"
-                    id="southafrica"
-                    class="area"
-                    value="southafrica"
-                  />
-                  <label for="southafrica" class="area-name">南アフリカ</label>
-                </div> -->
               </div>
             </div>
           </fieldset>
@@ -165,91 +65,6 @@
           <fieldset class="form-items">
             <legend><i class="fas fa-graduation-cap"></i>目的</legend>
             <div class="purpose-box">
-              <div class="purpose-items">
-                <input
-                  type="checkbox"
-                  name="short-study"
-                  id="short_study"
-                  class="purpose"
-                />
-                <label for="short-study" class="object-name">短期留学</label>
-                <div class="uni-select">
-                  <input
-                    type="checkbox"
-                    name="short-undergrad"
-                    id="short_undergrad"
-                    class="purpose short-uni"
-                    disabled
-                  />
-                  <label for="short-undergrad" class="object-name">大学</label>
-                  <input
-                    type="checkbox"
-                    name="short-undergrad"
-                    id="short_grad"
-                    class="purpose short-uni"
-                    disabled
-                  />
-                  <label for="short-grad" class="object-name">大学院</label>
-                </div>
-              </div>
-              <div class="purpose-items">
-                <input
-                  type="checkbox"
-                  name="long-study"
-                  id="long_study"
-                  class="purpose"
-                />
-                <label for="long-study" class="object-name">長期留学</label>
-                <div class="uni-select">
-                  <input
-                    type="checkbox"
-                    name="long-undergrad"
-                    id="long_undergrad"
-                    class="purpose long-uni"
-                    disabled
-                  />
-                  <label for="long-undergrad" class="object-name">大学</label>
-                  <input
-                    type="checkbox"
-                    name="long-grad"
-                    id="long_grad"
-                    class="purpose long-uni"
-                    disabled
-                  />
-                  <label for="long-grad" class="object-name">大学院</label>
-                </div>
-              </div>
-              <div class="purpose-items">
-                <input
-                  type="checkbox"
-                  name="study-lang"
-                  id="study_lang"
-                  class="purpose"
-                />
-                <label for="study-lang" class="object-name">語学留学</label>
-              </div>
-              <div class="object-items">
-                <input
-                  type="checkbox"
-                  name="work_holiday"
-                  id="work-holiday"
-                  class="purpose"
-                />
-                <label for="work-holiday" class="object-name"
-                  >ワーキングホリデー</label
-                >
-              </div>
-              <div class="object-items">
-                <input
-                  type="checkbox"
-                  name="work"
-                  id="work"
-                  class="purpose"
-                />
-                <label for="work" class="object-name"
-                  >仕事関係</label
-                >
-              </div>
             </div>
           </fieldset>
 
@@ -365,6 +180,15 @@
           $(nationBox).append($(nationContent));
         });
 
+        // Append purposes to search form
+        let purposeBox = $(".purpose-box");
+        let purposeDiv = "<div class='purposes'></div>";
+        Object.keys(purposes).forEach((purpose) => {
+          let purposeInput = "<input type='checkbox' name='purposes' class='purpose' value='" + purpose + "'/>";
+          let purposeLabels = "<label for='" + purpose + "class='area-name'>" + purposes[purpose] + "</label>";
+          let purposeContent = $(purposeDiv).append($(purposeInput)).append($(purposeLabels));
+          $(purposeBox).append($(purposeContent));
+        });
 
       });
 

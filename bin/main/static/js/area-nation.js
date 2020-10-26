@@ -15,7 +15,7 @@
         korea: "韓国",
         philippines: "フィリピン",
         thailand: "タイ",
-        taiwan:"台湾",
+        taiwan: "台湾",
         vietnam: "ベトナム",
         england: "イギリス",
         australia: "オーストラリア",

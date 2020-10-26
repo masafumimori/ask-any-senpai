@@ -72,40 +72,32 @@
         }
         .area-nations {
           width: 100%;
-          .area-box {
-            width: 100%;
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            .areas {
-              width: 25%;
-              display: flex;
-              align-items: center;
-            }
-          }
+          .area-box,
           .nation-box {
             width: 100%;
             padding: 10px;
             display: flex;
             flex-wrap: wrap;
+            margin: 5px 0;
+            .areas,
             .nations {
               width: 25%;
-              margin: 5px 0;
+              display: flex;
+              align-items: center;
+              margin: 3px 0;
             }
           }
         }
         .purpose-box {
-          .purpose-items {
+          width: 100%;
+          padding: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          .purposes {
+            width: 33%;
             display: flex;
             align-items: center;
-            margin: 5px 0;
-            label {
-              padding: 5px;
-            }
-            .uni-select {
-              font-size: 0.9rem;
-              margin-left: 10px;
-            }
+            margin: 3px 0;
           }
         }
         .form-btn {

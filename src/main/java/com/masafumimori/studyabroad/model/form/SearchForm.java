@@ -9,7 +9,7 @@ public class SearchForm implements Serializable{
 	private String keywords;
 	private String areas;
 	private String nations;
-	private String objects;
+	private String purposes;
 	
 	public String getKeywords() {
 		return keywords;
@@ -29,10 +29,11 @@ public class SearchForm implements Serializable{
 	public void setNations(String nations) {
 		this.nations = nations;
 	}
-	public String getObjects() {
-		return objects;
+	public String getPurposes() {
+		return purposes;
 	}
-	public void setObjects(String objects) {
-		this.objects = objects;
+	public void setPurposes(String purpose) {
+		this.purposes = purpose;
 	}
+
 }

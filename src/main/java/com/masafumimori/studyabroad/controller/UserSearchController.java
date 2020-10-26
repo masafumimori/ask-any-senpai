@@ -33,6 +33,7 @@ public class UserSearchController {
 		int matchedUserCount = 0;
 		String[] areas;
 		String[] nations;
+		String[] purposes;
 
 		// Need to modify below
 		String keywords = s.getKeywords();
@@ -48,9 +49,15 @@ public class UserSearchController {
 		} else {
 			nations = null;
 		}
+		
+		if(s.getPurposes() != null) {
+			purposes = s.getPurposes().split(",");
+		} else {
+			purposes = null;
+		}
 
 		if (keywords == null) {
-			matchedUsers = searchMapper.findByAreaAndNation(areas, nations);
+			matchedUsers = searchMapper.findMatchedUser(areas, nations, purposes);
 			matchedUserCount = matchedUsers.size();
 		} else {
 			// Code to search with keywords and areas/nations
