@@ -32,4 +32,14 @@
         columbia: "コロンビア",
         others: "その他"
       };
+
+      const purposes = {
+        short_undergrad: "大学留学（短期）",
+        long_undergrad: "大学留学（長期）",
+        short_grad: "大学院留学（短期）",
+        long_grad: "大学院留学（長期）",
+        study_lang: "語学留学",
+        work_holiday: "ワーキングホリデー",
+        work: "仕事関係"
+      };
 //]]>

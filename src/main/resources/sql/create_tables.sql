@@ -7,6 +7,7 @@ CREATE TABLE mst_user (
 	email VARCHAR(32) NOT NULL,
 	area VARCHAR(16),
 	nation VARCHAR(16),
+	purpose VARCHAR(16),
 	created_at TIMESTAMP NOT NULL default now(),
 	updated_at TIMESTAMP NOT NULL default now() 
 );

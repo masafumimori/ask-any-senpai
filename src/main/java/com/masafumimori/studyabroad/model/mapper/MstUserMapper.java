@@ -41,6 +41,7 @@ public interface MstUserMapper {
 			"email = #{email}, " +
 			"area = #{area}, " +
 			"nation = #{nation}, " +
+			"purpose = #{purpose}," +
 			"updated_at = now() " +
 			"WHERE id = #{id}"
 			)

@@ -8,6 +8,7 @@ public class UserSearchDto {
 	private String email;
 	private String area;
 	private String nation;
+	private String purpose;
 	private String twitter;
 	private String instagram;
 	private String facebook;
@@ -48,6 +49,12 @@ public class UserSearchDto {
 	}
 	public void setNation(String nation) {
 		this.nation = nation;
+	}
+	public String getPurpose() {
+		return purpose;
+	}
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
 	}
 	public String getTwitter() {
 		return twitter;

@@ -74,6 +74,22 @@
             ></option>
           </select>
         </div>
+        <!-- Purpose selection -->
+        <div class="mypage-input">
+          <label>海外に行った目的：</label>
+          <select id="purpose-select" name="purpose">
+            <option
+              th:if="${user.purpose == null || user.purpose == ''}"
+              value=""
+            >
+              海外に行った目的を選んでください
+            </option>
+            <option
+              id="hasPurpose"
+              th:if="${user.purpose != null && user.purpose != ''}"
+            ></option>
+          </select>
+        </div>
         <!-- SNS info -->
         <div class="mypage-input">
           <label>Twitter：</label>
@@ -156,6 +172,17 @@
           $("#nation-select").append(options);
         });
 
+        // Append purposes to purpose
+        Object.keys(purposes).forEach((purpose) => {
+          let options = "<option value='" + purpose + "'>" + purposes[purpose] + "</option>";
+          if(purpose == /*[[${user.purpose}]]*/){
+            $('#hasPurpose').val(purpose).text(purposes[purpose]);
+          }
+
+          $("#purpose-select").append(options);
+        });
+
+
         // To update profile info
         $("#finish-btn").on("click", (event) => {
           event.preventDefault();
@@ -166,6 +193,7 @@
             email: $("input[name=email]").val(),
             area: $("#area-select option:selected").val(),
             nation: $("#nation-select option:selected").val(),
+            purpose: $("#purpose-select option:selected").val(),
             twitter: $("input[name=twitter]").val(),
             instagram: $("input[name=instagram]").val(),
             facebook: $("input[name=facebook]").val(),

@@ -3,50 +3,50 @@ USE studyabroad;
 -- User demo
 INSERT INTO mst_user
 	(
-	user_name, password, email, area, nation
+	user_name, password, email, area, nation, purpose
 	)
 VALUES
 	(
-		"demo1", "demo", "demo@email.com", "asia", "taiwan"
+		"demo1", "demo", "demo@email.com", "asia", "taiwan", "long_grad"
     ),
 	(
-		"demo2", "demo", "demo@email.com", "asia", "philippines"
+		"demo2", "demo", "demo@email.com", "asia", "philippines", "short_grad"
     ),
 	(
-		"demo3", "demo", "demo@email.com", "europe", "germany"
+		"demo3", "demo", "demo@email.com", "europe", "germany", "short_undergrad"
     ),
 	(
-		"demo4", "demo", "demo@email.com", "asia", "thailand"
+		"demo4", "demo", "demo@email.com", "asia", "thailand", "long_undergrad"
     ),
 	(
-		"demo5", "demo", "demo@email.com", "america", "canada"
+		"demo5", "demo", "demo@email.com", "america", "canada", "work"
     ),
 	(
-		"demo6", "demo", "demo@email.com", "asia", "korea"
+		"demo6", "demo", "demo@email.com", "asia", "korea", "study_lang"
     ),
 	(
-		"demo7", "demo", "demo@email.com", "europe", "italy"
+		"demo7", "demo", "demo@email.com", "europe", "italy", "work_holiday"
     ),
 	(
-		"demo8", "demo", "demo@email.com", "asia", "vietnam"
+		"demo8", "demo", "demo@email.com", "asia", "vietnam", "long_grad"
     ),
 	(
-		"demo9", "demo", "demo@email.com", "europe", "england"
+		"demo9", "demo", "demo@email.com", "europe", "england", "work_holiday"
     ),
 	(
-		"demo10", "demo", "demo@email.com", "europe", "spain"
+		"demo10", "demo", "demo@email.com", "europe", "spain", "short_grad"
     ),
 	(
-		"demo11", "demo", "demo@email.com", "europe", "portugal"
+		"demo11", "demo", "demo@email.com", "europe", "portugal", "work"
     ),
 	(
-		"demo12", "demo", "demo@email.com", "europe", "france"
+		"demo12", "demo", "demo@email.com", "europe", "france", "short_undergrad"
     ),
 	(
-		"demo13", "demo", "demo@email.com", "asia", "china"
+		"demo13", "demo", "demo@email.com", "asia", "china", "long_undergrad"
     ),
 	(
-		"demo14", "demo", "demo@email.com", "oceania", "australia"
+		"demo14", "demo", "demo@email.com", "oceania", "australia", "study_lang"
     )
 ;
 

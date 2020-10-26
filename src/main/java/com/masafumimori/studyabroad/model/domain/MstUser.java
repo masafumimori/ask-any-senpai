@@ -12,6 +12,7 @@ public class MstUser {
 	private String email;
 	private String area;
 	private String nation;
+	private String purpose;
 	private Timestamp createdAt;
 	private Timestamp updatedAt;
 	
@@ -60,6 +61,14 @@ public class MstUser {
 	}
 	public void setNation(String nation) {
 		this.nation = nation;
+	}
+
+	public String getPurpose() {
+		return purpose;
+	}
+
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
 	}
 
 	public Timestamp getCreatedAt() {

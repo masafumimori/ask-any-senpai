@@ -55,6 +55,14 @@
            <span th:if="${user.nation == null || user.nation == ''}" th:text="未登録"/></span>
        </p>
        </div>
+       <!-- Purpose -->
+       <div class="mypage-items">
+        <p>留学した目的：
+          <span th:if="${user.purpose != null && user.purpose != ''}" id="showPurpose"></span>
+          <span th:if="${user.purpose == null && user.purpose == ''}" th:text="未登録"/></span>
+      </p>
+      </div>
+
        <!-- SNS -->
        <div class="mypage-items">
          <p>登録しているSNS：
@@ -120,6 +128,13 @@
               $('#showNation').text(nations[nation]);
             }
           });
+
+          // Display PURPOSE if it's set in DB
+          Object.keys(purposes).forEach((purpose) => {
+            if(purpose == /*[[${user.purpose}]]*/){
+              $('#showPurpose').text(purposes[purpose]);
+            }
+          })
 
         });
     
