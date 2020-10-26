@@ -54,6 +54,13 @@
            <span th:if="${senpai.nation == null || senpai.nation == ''}" th:text="未登録"/></span>
        </p>
        </div>
+       <!-- Purpose -->
+       <div class="senpai-items">
+        <p>海外に行った目的：
+          <span th:if="${senpai.purpose != null && senpai.purpose != ''}" id="showPurpose"></span>
+          <span th:if="${senpai.purpose == null || senpai.purpose == ''}" th:text="未登録"></span>
+      </p>
+      </div>
        <!-- SNS -->
        <div class="senpai-items">
          <p>登録しているSNS：
@@ -96,6 +103,7 @@
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/area-nation.js"></script>
     <script th:inline="javascript">
       /*<![CDATA[*/
 
@@ -115,34 +123,14 @@
           }
         });
 
+        // Display PURPOSE if it's set in DB
+        Object.keys(purposes).forEach((purpose) => {
+          if(purpose == /*[[${senpai.purpose}]]*/){
+            $('#showPurpose').text(purposes[purpose]);
+          }
+        });
+
       });
-
-      const areas = {
-        asia: "アジア",
-        europe: "ヨーロッパ",
-        america: "アメリカ",
-        africa: "アフリカ",
-        others: "その他"
-      };
-
-      const nations = {
-        america: "アメリカ",
-        canada: "カナダ",
-        england: "イギリス",
-        australia: "オーストラリア",
-        newzealand: "ニュージーランド",
-        italy: "イタリア",
-        spain: "スペイン",
-        germany: "ドイツ",
-        france: "フランス",
-        portugal: "ポルトガル",
-        china: "中国",
-        korea: "韓国",
-        philippines: "フィリピン",
-        thailand: "タイ",
-        vietnam: "ベトナム",
-        others: "その他"
-      };
 
       /*]]>*/
     </script>
