@@ -59,7 +59,7 @@
        <div class="mypage-items">
         <p>留学した目的：
           <span th:if="${user.purpose != null && user.purpose != ''}" id="showPurpose"></span>
-          <span th:if="${user.purpose == null && user.purpose == ''}" th:text="未登録"/></span>
+          <span th:if="${user.purpose == null || user.purpose == ''}" th:text="未登録"/></span>
       </p>
       </div>
 

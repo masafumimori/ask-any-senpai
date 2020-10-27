@@ -19,7 +19,7 @@ VALUES
 		"demo4", "demo", "demo@email.com", "asia", "thailand", "long_undergrad"
     ),
 	(
-		"demo5", "demo", "demo@email.com", "america", "canada", "work"
+		"demo5", "demo", "demo@email.com", "americaN", "canada", "work"
     ),
 	(
 		"demo6", "demo", "demo@email.com", "asia", "korea", "study_lang"
@@ -47,6 +47,9 @@ VALUES
     ),
 	(
 		"demo14", "demo", "demo@email.com", "oceania", "australia", "study_lang"
+    ),
+    	(
+		"demo15", "demo", "demo@email.com", "americaS", "brazil", "work"
     )
 ;
 
