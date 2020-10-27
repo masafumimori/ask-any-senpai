@@ -78,6 +78,13 @@
               cursor: pointer;
             }
           }
+          .input-box.withError {
+            border: 2px solid #ff6060;
+          }
+          .error-messages {
+            color: #ff6060;
+            font-size: 0.8em;
+          }
           .form-btn {
             width: 70%;
             padding-top: 20px;
@@ -96,6 +103,11 @@
               cursor: pointer;
               filter: contrast(200%);
             }
+          }
+          .invalidForm {
+            margin-top: 10px;
+            color: #ff6060;
+            font-size: 0.8em;
           }
         }
       }
