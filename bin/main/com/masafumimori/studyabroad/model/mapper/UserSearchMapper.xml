@@ -38,4 +38,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		</where>
 		ORDER BY user.updated_at DESC
 	</select>
+
+	<select id="findUserByKeywords" resultType="com.masafumimori.studyabroad.model.domain.dto.UserSearchDto">
+		SELECT
+			user.id,
+			user.user_name,
+			sns.twitter,
+			sns.instagram,
+			sns.facebook
+		FROM
+			mst_user AS user
+		JOIN
+			mst_user_sns AS sns
+		ON
+			user.id = sns.user_id
+		WHERE
+				<foreach item="keyword" collection="keywords" open="(" close=")" separator="" index="index">
+					user.user_name LIKE '%${keyword}%' OR
+					user.area LIKE'%${keyword}%' OR
+					user.nation LIKE '%${keyword}%' OR
+					user.purpose LIKE '%${keyword}%'
+				</foreach>
+		ORDER BY user.updated_at DESC
+	</select>
+
 </mapper>

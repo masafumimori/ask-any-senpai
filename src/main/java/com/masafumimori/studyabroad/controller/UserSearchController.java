@@ -31,12 +31,16 @@ public class UserSearchController {
 
 		List<UserSearchDto> matchedUsers;
 		int matchedUserCount = 0;
+		String[] keywords;
 		String[] areas;
 		String[] nations;
 		String[] purposes;
 
-		// Need to modify below
-		String keywords = s.getKeywords();
+		if (s.getKeywords() != null) {
+			keywords =  s.getKeywords().replaceAll("　", " ").replaceAll("\\s{2,}", " ").trim().split(" ");
+		} else {
+			keywords = null;
+		}
 
 		if (s.getAreas() != null) {
 			areas = s.getAreas().split(",");
@@ -56,12 +60,13 @@ public class UserSearchController {
 			purposes = null;
 		}
 
-		if (keywords == null) {
-			matchedUsers = searchMapper.findMatchedUser(areas, nations, purposes);
+		if (keywords != null) {
+			matchedUsers = searchMapper.findUserByKeywords(keywords);
+//			matchedUsers += searchMapper.findMatchedUser(areas, nations, purposes);
 			matchedUserCount = matchedUsers.size();
 		} else {
-			// Code to search with keywords and areas/nations
-			matchedUsers = null;
+			matchedUsers = searchMapper.findMatchedUser(areas, nations, purposes);
+			matchedUserCount = matchedUsers.size();
 		}
 		
 		String userName = loginSession.getUserName();

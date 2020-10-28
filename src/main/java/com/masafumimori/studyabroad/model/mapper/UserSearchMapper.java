@@ -15,4 +15,6 @@ public interface UserSearchMapper {
 			@Param("nations") String[] nations,
 			@Param("purposes") String[] purposes
 			);
+	
+	public List<UserSearchDto> findUserByKeywords(@Param("keywords") String[] keywords);
 }
