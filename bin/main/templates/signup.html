@@ -9,7 +9,7 @@
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
     />
     <link rel="stylesheet" href="/css/page-header.min.css" />
-    <link rel="stylesheet" href="/css/register.min.css" />
+    <link rel="stylesheet" href="/css/signup.min.css" />
     <title>Ask Any-Senpai</title>
   </head>
   <body>
@@ -21,7 +21,7 @@
       <div class="left"></div>
       <div class="right">
         <div class="signup-form">
-          <h2 class="form-title">ユーザー登録</h2>
+          <h2 class="form-title">新規登録</h2>
           <!-- Add action-->
           <form class="form">
             <div class="input-box">
@@ -31,7 +31,7 @@
                 name="userName"
                 type="text"
                 autocomplete="off"
-                placeholder="ユーザー名"
+                placeholder="ユーザー名（4文字以上）"
               />
             </div>
             <span class="error-messages"></span>
@@ -43,7 +43,7 @@
                 name="password"
                 type="password"
                 autocomplete="off"
-                placeholder="パスワード"
+                placeholder="パスワード（4文字以上）"
                 id="password"
               />
             </div>
@@ -56,7 +56,7 @@
                 name="rePassword"
                 type="password"
                 autocomplete="off"
-                placeholder="パスワード確認"
+                placeholder="パスワード（確認）"
               />
             </div>
             <span class="error-messages"></span>
@@ -81,7 +81,7 @@
                 name="reEmail"
                 type="email"
                 autocomplete="off"
-                placeholder="メールアドレス確認"
+                placeholder="メールアドレス（確認）"
               />
             </div>
             <span class="error-messages"></span>
@@ -106,28 +106,37 @@
       $(() => {
 
         // Need to fix here when form is submitted
-        $(".form").ajaxForm(function() {
+        $(".form").submit((event) => {
 
-          let jsonString = {
-            userName: $("input[name=userName]").val(),
-            password: $("input[name=password]").val(),
-            email: $("input[name=email]").val(),
-          };
-          $.ajax({
-            type: "POST",
-            url: "/studyabroad/user/register",
-            data: JSON.stringify(jsonString),
-            contentType: "application/json",
-            scriptCharset: "utf-8",
-          }).then(
-            (result) => {
-              alert("登録が完了しました。");
-              location.replace("/studyabroad/user/login_page");
-            },
-            () => {
-              alert("登録に失敗しました。");
-            }
-          );
+          let errorCheck = $(".input-box").hasClass("withError")? true: false;
+
+          if(!errorCheck) {
+            event.preventDefault();
+
+            let jsonString = {
+              userName: $("input[name=userName]").val(),
+              password: $("input[name=password]").val(),
+              email: $("input[name=email]").val(),
+            };
+            $.ajax({
+              type: "POST",
+              url: "/studyabroad/user/register",
+              data: JSON.stringify(jsonString),
+              contentType: "application/json",
+              scriptCharset: "utf-8",
+            }).then(
+              (result) => {
+                alert("登録が完了しました。");
+                location.replace("/studyabroad/user/login_page");
+              },
+              () => {
+                alert("登録に失敗しました。");
+              }
+            );
+          }
+          else {
+            alert("登録できませんでした。入力内容をご確認ください。");
+          }
         });
       });
     </script>
