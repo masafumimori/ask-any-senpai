@@ -7,50 +7,68 @@ INSERT INTO mst_user
 	)
 VALUES
 	(
-		"demo1", "demo", "demo@email.com", "asia", "taiwan", "long_grad"
+		"demo1", "demo", "demo@email.com", "アジア", "台湾", "大学院留学（長期）"
     ),
 	(
-		"demo2", "demo", "demo@email.com", "asia", "philippines", "short_grad"
+		"demo2", "demo", "demo@email.com", "アジア", "フィリピン", "大学院留学（短期）"
     ),
 	(
-		"demo3", "demo", "demo@email.com", "europe", "germany", "short_undergrad"
+		"demo3", "demo", "demo@email.com", "ヨーロッパ", "ドイツ", "大学留学（短期）"
     ),
 	(
-		"demo4", "demo", "demo@email.com", "asia", "thailand", "long_undergrad"
+		"demo4", "demo", "demo@email.com", "アジア", "タイ", "大学留学（長期）"
     ),
 	(
-		"demo5", "demo", "demo@email.com", "americaN", "canada", "work"
+		"demo5", "demo", "demo@email.com", "北アメリカ", "カナダ", "仕事関係"
     ),
 	(
-		"demo6", "demo", "demo@email.com", "asia", "korea", "study_lang"
+		"demo6", "demo", "demo@email.com", "アジア", "韓国", "語学留学"
     ),
 	(
-		"demo7", "demo", "demo@email.com", "europe", "italy", "work_holiday"
+		"demo7", "demo", "demo@email.com", "ヨーロッパ", "イタリア", "ワーキングホリデー"
     ),
 	(
-		"demo8", "demo", "demo@email.com", "asia", "vietnam", "long_grad"
+		"demo8", "demo", "demo@email.com", "アジア", "ベトナム", "大学院留学（長期）"
     ),
 	(
-		"demo9", "demo", "demo@email.com", "europe", "england", "work_holiday"
+		"demo9", "demo", "demo@email.com", "ヨーロッパ", "イギリス", "ワーキングホリデー"
     ),
 	(
-		"demo10", "demo", "demo@email.com", "europe", "spain", "short_grad"
+		"demo10", "demo", "demo@email.com", "ヨーロッパ", "スペイン", "大学留学（短期）"
     ),
 	(
-		"demo11", "demo", "demo@email.com", "europe", "portugal", "work"
+		"demo11", "demo", "demo@email.com", "ヨーロッパ", "ポルトガル", "仕事関係"
     ),
 	(
-		"demo12", "demo", "demo@email.com", "europe", "france", "short_undergrad"
+		"demo12", "demo", "demo@email.com", "ヨーロッパ", "フランス", "大学留学（短期）"
     ),
 	(
-		"demo13", "demo", "demo@email.com", "asia", "china", "long_undergrad"
+		"demo13", "demo", "demo@email.com", "アジア", "中国", "大学留学（長期）"
     ),
 	(
-		"demo14", "demo", "demo@email.com", "oceania", "australia", "study_lang"
+		"demo14", "demo", "demo@email.com", "オセアニア", "オーストラリア", "語学留学"
     ),
-    	(
-		"demo15", "demo", "demo@email.com", "americaS", "brazil", "work"
-    )
+	(
+		"demo15", "demo", "demo@email.com", "南アメリカ", "ブラジル", "仕事関係"
+    ),
+	(
+		"demo16", "demo", "demo@email.com", "南アメリカ", "アルゼンチン", "大学院留学（長期）"
+	),
+	(
+		"demo17", "demo", "demo@email.com", "北アメリカ", "アメリカ", "大学院留学（短期）"
+	),
+	(
+		"demo18", "demo", "demo@email.com", "南アメリカ", "コロンビア", "大学留学（長期）"
+	),
+	(
+		"demo19", "demo", "demo@email.com", "その他", "その他", "仕事関係"
+	),
+	(
+		"demo20", "demo", "demo@email.com", "アフリカ", "南アフリカ", "ワーキングホリデー"
+	),
+	(
+		"demo21", "demo", "demo@email.com", "アフリカ", "エジプト", "仕事関係"
+	)
 ;
 
 
