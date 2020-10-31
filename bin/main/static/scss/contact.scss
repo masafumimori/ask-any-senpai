@@ -1,84 +1,102 @@
 @import "default";
 
-@media screen and (min-width: 671px) {
-  .contact {
-    width: 100%;
-    height: 100%;
-    .contact-form {
-      width: 60%;
-      height: fit-content;
-      margin: 15vh auto 10vh;
-      background: #fff;
-      border-radius: 20px;
-      padding: 10px;
-      border: 1px solid #999;
-      .form-title {
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin: 10px 0;
-        text-align: center;
-      }
-      form {
-        width: 95%;
-        margin: 0 auto;
-        .form-items {
-          width: 100%;
-          margin: 15px 0;
-          display: flex;
-          flex-direction: column;
-          label {
-            margin: 10px 0;
-            font-weight: 700;
-            span {
-              background: $pink;
-              color: #fff;
-              font-size: 0.6rem;
-              font-weight: 400;
-              margin-left: 10px;
-              margin-bottom: 10px;
-              padding: 3px;
-            }
-          }
-          select,
-          input,
-          textarea {
-            border: 1px solid #999;
-            outline: none;
-            padding: 7px 10px;
-            border-radius: 5px;
-            width: 100%;
-          }
-        }
-        .caution-items {
-          margin: 5px 0;
-          p {
-            color: $pink;
-            font-size: 0.8rem;
-            margin: 5px;
-          }
-        }
-        .form-btn {
-          width: 100%;
-          @include flex-center();
-          .submit-btn {
-            background: $orange;
+/**** DEFAULT CSS ***/
+.contact {
+  width: 100%;
+  height: 100%;
+  .contact-form {
+    width: 60%;
+    height: fit-content;
+    margin: 15vh auto 10vh;
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid #999;
+    .form-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 10px 0;
+      text-align: center;
+    }
+    form {
+      width: 95%;
+      margin: 0 auto;
+      .form-items {
+        width: 100%;
+        margin: 15px 0;
+        display: flex;
+        flex-direction: column;
+        label {
+          margin: 10px 0;
+          font-weight: 700;
+          span {
+            background: $pink;
             color: #fff;
-            width: 90%;
-            margin: 10px 0;
-            border: 2px solid rgb(207, 101, 1);
-            border-radius: 5px;
-            padding: 5px;
-            font-weight: 700;
-            &:hover {
-              cursor: pointer;
-              filter: contrast(150%);
-            }
+            font-size: 0.6rem;
+            font-weight: 400;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            padding: 3px;
+          }
+        }
+        select,
+        input,
+        textarea {
+          border: 1px solid #999;
+          outline: none;
+          padding: 7px 10px;
+          border-radius: 5px;
+          width: 100%;
+        }
+      }
+      .caution-items {
+        margin: 5px 0;
+        p {
+          color: $pink;
+          font-size: 0.8rem;
+          margin: 5px;
+        }
+      }
+      .form-btn {
+        width: 100%;
+        @include flex-center();
+        .submit-btn {
+          background: $orange;
+          color: #fff;
+          width: 90%;
+          margin: 10px 0;
+          border: 2px solid rgb(207, 101, 1);
+          border-radius: 5px;
+          padding: 5px;
+          font-weight: 700;
+          &:hover {
+            cursor: pointer;
+            filter: contrast(150%);
           }
         }
       }
     }
   }
-  footer {
-    padding-bottom: 0;
+}
+footer {
+  padding-bottom: 0;
+}
+/**** DEFAULT CSS End ****/
+
+// CSS For mobile
+@media screen and (max-width: 480px) {
+  .contact {
+    .contact-form {
+      width: 80%;
+      margin-bottom: 5vh;
+      form {
+        .caution-items {
+          margin: 5px 0;
+          p {
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
   }
 }

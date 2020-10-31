@@ -1,113 +1,148 @@
 @import "default";
 
-@media screen and (min-width: 671px) {
-  .register {
-    width: 100%;
-    height: 100vh;
-    padding-top: 10vh;
+/***** DEFAULT CSS ****/
+.register {
+  width: 100%;
+  height: 100vh;
+  padding-top: 10vh;
+  display: flex;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    background: $dark-blue;
+    top: -10%;
+    right: 48%;
+    transform: translateY(-50%);
+  }
+  .left {
+    width: 40%;
     display: flex;
-    overflow: hidden;
-    &::before {
-      content: "";
-      position: absolute;
-      width: 1000px;
-      height: 1000px;
-      border-radius: 50%;
-      background: $dark-blue;
-      top: -10%;
-      right: 48%;
-      transform: translateY(-50%);
-    }
-    .left {
-      width: 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      //MODIFY THE BACKGROUND
-      background: url(../img/undraw_Access_account_re_8spm.svg);
-      background-size: 80%;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 2;
-    }
-    .right {
-      width: 60%;
-      height: 100%;
-      margin-left: auto;
-      @include flex-center();
-      .signup-form {
-        width: 80%;
-        height: fit-content;
-        margin: 150px auto;
-        padding: 30px 20px;
-        border: 1px solid rgba(0, 0, 0, 0);
-        border-radius: 10px;
-        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
-          -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-        .form-title {
-          font-size: 1.5rem;
-          font-weight: 700;
-          text-align: center;
-          margin-bottom: 20px;
-        }
-        .form {
+    justify-content: center;
+    align-items: center;
+    //MODIFY THE BACKGROUND
+    background: url(../img/undraw_Access_account_re_8spm.svg);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+  }
+  .right {
+    width: 60%;
+    height: 100%;
+    margin-left: auto;
+    @include flex-center();
+    .signup-form {
+      width: 80%;
+      height: fit-content;
+      margin: 150px auto;
+      padding: 30px 20px;
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-radius: 10px;
+      box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+      .form-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .input-box {
+          height: 40px;
+          width: 80%;
           display: flex;
           align-items: center;
-          flex-direction: column;
-          .input-box {
-            height: 40px;
-            width: 80%;
-            display: flex;
-            align-items: center;
-            background: #f7f8f5;
-            padding: 10px 20px;
-            border-radius: 20px;
-            margin: 2%;
-            i {
-              line-height: 40px;
-              color: #888;
-              font-size: 0.9rem;
-            }
-            .input-item {
-              background: #f7f8f5;
-              width: 100%;
-              height: 100%;
-              padding-left: 10px;
-              border: none;
-              outline: none;
-              cursor: pointer;
-            }
+          background: #f7f8f5;
+          padding: 10px 20px;
+          border-radius: 20px;
+          margin: 2%;
+          i {
+            line-height: 40px;
+            color: #888;
+            font-size: 0.9rem;
           }
-          .input-box.withError {
-            border: 2px solid #ff6060;
+          .input-item {
+            background: #f7f8f5;
+            width: 100%;
+            height: 100%;
+            padding-left: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+        }
+        .input-box.withError {
+          border: 2px solid #ff6060;
+        }
+        .error-messages {
+          color: #ff6060;
+          font-size: 0.8em;
+        }
+        .form-btn {
+          width: 70%;
+          padding-top: 20px;
+          @include flex-center();
+          #signupBtn {
+            width: 50%;
+            height: 35px;
+            background: $blue;
+            color: $white;
+            font-weight: 700;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+          }
+          #signupBtn:hover {
+            cursor: pointer;
+            filter: contrast(200%);
+          }
+        }
+        .invalidForm {
+          margin-top: 10px;
+          color: #ff6060;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+/**** DEFAULT CSS End *****/
+
+// CSS For mobile
+@media screen and (max-width: 480px) {
+  .register {
+    display: flex;
+    flex-direction: column-reverse;
+    &::before {
+      z-index: -1;
+    }
+    .left {
+      display: none;
+    }
+    .right {
+      width: 100%;
+      .signup-form {
+        .form {
+          .input-box {
+            width: 85%;
           }
           .error-messages {
-            color: #ff6060;
-            font-size: 0.8em;
+            font-size: 0.9rem;
           }
           .form-btn {
-            width: 70%;
-            padding-top: 20px;
-            @include flex-center();
             #signupBtn {
-              width: 50%;
-              height: 35px;
-              background: $blue;
-              color: $white;
-              font-weight: 700;
-              border-radius: 20px;
-              border: none;
-              outline: none;
-            }
-            #signupBtn:hover {
-              cursor: pointer;
-              filter: contrast(200%);
+              width: 70%;
             }
           }
           .invalidForm {
-            margin-top: 10px;
-            color: #ff6060;
-            font-size: 0.8em;
+            font-size: 0.9em;
           }
         }
       }

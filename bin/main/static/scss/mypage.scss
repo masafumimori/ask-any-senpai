@@ -1,134 +1,164 @@
 @import "default";
 
-@media screen and (min-width: 671px) {
-  .mypage {
-    min-height: 90vh;
-    width: 100%;
-    padding-top: 20vh;
+/**** DEFAULT CSS *****/
+.mypage {
+  min-height: 90vh;
+  width: 100%;
+  padding-top: 20vh;
+  @include flex-center();
+  .mypage-box {
+    width: 60%;
+    height: fit-content;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px 1px rgba(0, 0, 0, 0.3);
     @include flex-center();
-    .mypage-box {
-      width: 50%;
-      height: fit-content;
-      background: #fff;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 6px 6px 10px 1px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+      width: fit-content;
+      border-bottom: 1px solid #000;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    .mypage-img {
+      width: 60%;
+      height: auto;
       @include flex-center();
-      flex-direction: column;
-      h2 {
-        font-size: 1.2rem;
-        font-weight: 700;
-        text-align: center;
-        width: fit-content;
-        border-bottom: 1px solid #000;
-        padding-bottom: 5px;
-        margin-bottom: 20px;
-      }
-      .mypage-img {
-        width: 60%;
+      margin-bottom: 20px;
+      img {
+        width: 70%;
         height: auto;
-        @include flex-center();
-        margin-bottom: 20px;
-        img {
-          width: 70%;
-          height: auto;
-          border-radius: 50%;
-          border: 3px solid #3778b9;
-        }
-        .default-pic {
-          border: none;
-        }
+        border-radius: 50%;
+        border: 3px solid #3778b9;
       }
-      .mypage-items {
-        width: 90%;
-        text-align: center;
-        margin: 10px 0;
-        p {
-          font-weight: 600;
-          span {
-            font-weight: 400;
-          }
-          .fa-twitter {
-            color: $twitter;
-          }
-          .fa-instagram {
-            background: $instagram;
-            color: #fff;
-            border-radius: 3px;
-          }
-          .fa-facebook {
-            color: $facebook;
-          }
-        }
+      .default-pic {
+        border: none;
       }
-      .btn-box {
-        margin: 20px 0 10px;
-        width: 100%;
-        height: 40px;
-        @include flex-center();
-        .edit-btn {
-          width: 40%;
-          min-width: 150px;
-          height: 100%;
-          line-height: 40px;
-          text-align: center;
-          background: $black-coral;
+    }
+    .mypage-items {
+      width: 90%;
+      text-align: center;
+      margin: 10px 0;
+      p {
+        font-weight: 600;
+        span {
+          font-weight: 400;
+        }
+        .fa-twitter {
+          color: $twitter;
+        }
+        .fa-instagram {
+          background: $instagram;
           color: #fff;
-          text-decoration: none;
-          border: none;
-          border-radius: 20px;
-          font-size: 0.9rem;
-          &:hover {
-            cursor: pointer;
-            filter: contrast(200%);
+          border-radius: 3px;
+        }
+        .fa-facebook {
+          color: $facebook;
+        }
+      }
+    }
+    .btn-box {
+      margin: 20px 0 10px;
+      width: 100%;
+      height: 40px;
+      @include flex-center();
+      .edit-btn {
+        width: 40%;
+        min-width: 150px;
+        height: 100%;
+        line-height: 40px;
+        text-align: center;
+        background: $black-coral;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        &:hover {
+          cursor: pointer;
+          filter: contrast(200%);
+        }
+      }
+    }
+
+    //For edit page
+    .mypage-input {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      margin: 7px 0;
+      label {
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+      input,
+      select {
+        border-radius: 10px;
+        padding: 5px 10px;
+        border: 0.5px solid #cacaca;
+        outline: none;
+        background: #fff;
+      }
+      .sns-input::placeholder {
+        font-size: 0.7rem;
+      }
+    }
+    .btn-box {
+      margin: 20px 0 10px;
+      width: 100%;
+      height: 40px;
+      @include flex-center();
+      #finish-btn {
+        width: 40%;
+        min-width: 150px;
+        height: 100%;
+        line-height: 40px;
+        text-align: center;
+        background: $dark-blue;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        &:hover {
+          cursor: pointer;
+          filter: contrast(200%);
+        }
+      }
+    }
+  }
+}
+/***** DEFAULT CSS End ****/
+
+@media screen and (max-width: 480px) {
+  .mypage {
+    padding-top: 15vh;
+    .mypage-box {
+      margin-top: 20px;
+      width: 70%;
+      .mypage-items {
+        display: flex;
+        flex-direction: column;
+        p {
+          width: 100%;
+          span {
+            display: block;
+            margin-top: 7px;
+          }
+          .sns-btn {
+            display: inline-block;
           }
         }
       }
 
       //For edit page
       .mypage-input {
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin: 7px 0;
-        label {
-          margin-bottom: 5px;
-          font-size: 0.9rem;
-          font-weight: 700;
-        }
-        input,
-        select {
-          border-radius: 10px;
-          padding: 5px 10px;
-          border: 0.5px solid #cacaca;
-          outline: none;
-        }
-        .sns-input::placeholder {
-          font-size: 0.7rem;
-        }
-      }
-      .btn-box {
-        margin: 20px 0 10px;
-        width: 100%;
-        height: 40px;
-        @include flex-center();
-        #finish-btn {
-          width: 40%;
-          min-width: 150px;
-          height: 100%;
-          line-height: 40px;
-          text-align: center;
-          background: $dark-blue;
-          color: #fff;
-          text-decoration: none;
-          border: none;
-          border-radius: 20px;
-          font-size: 0.9rem;
-          &:hover {
-            cursor: pointer;
-            filter: contrast(200%);
-          }
-        }
+        width: 90%;
       }
     }
   }

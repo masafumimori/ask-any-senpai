@@ -69,7 +69,7 @@
            <span th:if="${user.twitter == null || user.twitter == ''} and ${user.instagram == null || user.instagram == ''} and ${user.facebook == null || user.facebook == ''}" th:text="未登録"></span>
            <!-- Twitter -->
             <span th:if="${user.twitter == null || user.twitter == ''}" /></span>
-            <span th:if="${user.twitter != null && user.twitter != ''}">
+            <span th:if="${user.twitter != null && user.twitter != ''}" class="sns-btn">
               <a
               th:href="@{'https://twitter.com/' + ${user.twitter}}"
               class="twitter"
@@ -79,7 +79,7 @@
             </span>
             <!-- Instagram -->
             <span th:if="${user.instagram == null || user.instagram == ''}" /></span>
-            <span th:if="${user.instagram != null && user.instagram != ''}">
+            <span th:if="${user.instagram != null && user.instagram != ''}" class="sns-btn">
               <a
               th:href="@{'https://instagram.com/' + ${user.instagram}}"
               class="instagram"
@@ -89,7 +89,7 @@
             </span>
             <!-- Facebook -->
             <span th:if="${user.facebook == null || user.facebook == ''}" /></span>
-            <span th:if="${user.facebook != null && user.facebook != ''}">
+            <span th:if="${user.facebook != null && user.facebook != ''}" class="sns-btn">
               <a
               th:href="@{'https://facebook.com/' + ${user.facebook}}"
               class="facebook"
