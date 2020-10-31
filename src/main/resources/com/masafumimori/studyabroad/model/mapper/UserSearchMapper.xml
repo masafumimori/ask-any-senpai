@@ -53,9 +53,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		ON
 			user.id = sns.user_id
 		WHERE
-				<foreach item="keyword" collection="keywords" open="(" close=")" separator="" index="index">
+				<foreach item="keyword" collection="keywords" open="(" close=")" separator="OR" index="index">
 					user.user_name LIKE '%${keyword}%' OR
-					user.area LIKE'%${keyword}%' OR
+					user.area LIKE '%${keyword}%' OR
 					user.nation LIKE '%${keyword}%' OR
 					user.purpose LIKE '%${keyword}%'
 				</foreach>

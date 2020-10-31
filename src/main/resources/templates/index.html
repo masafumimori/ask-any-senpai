@@ -45,7 +45,7 @@
               type="text"
               name="keywords"
               id="free-search-input"
-              placeholder="国名、大学名、プロフィール内容"
+              placeholder="ユーザー名、国名、プロフィール内容など"
             />
           </fieldset>
 
@@ -163,9 +163,9 @@
         // Append areas to search form
         let areaBox = $(".area-box");
         let areaDiv = "<div class='areas'></div>";
-        Object.keys(areas).forEach((area) => {
-          let areaInput = "<input type='checkbox' name='areas' class='area' value='" + area + "'/>";
-          let areaLabels = "<label for='" + area + "class='area-name'>" + areas[area] + "</label>";
+        $.each(areas, (index, value) => {
+          let areaInput = "<input type='checkbox' name='areas' class='area' value='" + value + "' id='" + value + "'/>";
+          let areaLabels = "<label for='" + value + "' class='area-name'>" + value + "</label>";
           let areaContent = $(areaDiv).append($(areaInput)).append($(areaLabels));
           $(areaBox).append($(areaContent));
         });
@@ -173,9 +173,9 @@
         // Append nations to search form        
         let nationBox = $(".nation-box");
         let nationDiv = "<div class='nations'></div>";
-        Object.keys(nations).forEach((nation) => {
-          let nationInput = "<input type='checkbox' name='nations' class='area' value='" + nation + "'/>";
-          let nationLabels = "<label for='" + nation + "class='area-name'>" + nations[nation] + "</label>";
+        $.each(nations, (index, value) => {
+          let nationInput = "<input type='checkbox' name='nations' class='area' value='" + value + "' id='" + value + "'/>";
+          let nationLabels = "<label for='" + value + "' class='area-name'>" + value + "</label>";
           let nationContent = $(nationDiv).append($(nationInput)).append($(nationLabels));
           $(nationBox).append($(nationContent));
         });
@@ -183,9 +183,9 @@
         // Append purposes to search form
         let purposeBox = $(".purpose-box");
         let purposeDiv = "<div class='purposes'></div>";
-        Object.keys(purposes).forEach((purpose) => {
-          let purposeInput = "<input type='checkbox' name='purposes' class='purpose' value='" + purpose + "'/>";
-          let purposeLabels = "<label for='" + purpose + "class='area-name'>" + purposes[purpose] + "</label>";
+        $.each(purposes, (index, value) => {
+          let purposeInput = "<input type='checkbox' name='purposes' class='purpose' value='" + value + "' id='" + value + "' />";
+          let purposeLabels = "<label for='" + value + "' class='area-name'>" + value + "</label>";
           let purposeContent = $(purposeDiv).append($(purposeInput)).append($(purposeLabels));
           $(purposeBox).append($(purposeContent));
         });

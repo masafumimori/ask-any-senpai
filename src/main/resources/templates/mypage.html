@@ -116,25 +116,25 @@
         $(() => {
 
           // Display AREA if it's set in DB
-          Object.keys(areas).forEach((area) => {
-            if(area == /*[[${user.area}]]*/){
-              $('#showArea').text(areas[area]);
+          $.each(areas, (index, value) => {
+            if(value == /*[[${user.area}]]*/){
+              $('#showArea').text(value);
             }
           });
 
           // Display NATION if it's set in DB
-          Object.keys(nations).forEach((nation) => {
-            if(nation == /*[[${user.nation}]]*/){
-              $('#showNation').text(nations[nation]);
+          $.each(nations, (index, value) => {
+            if(value == /*[[${user.nation}]]*/){
+              $('#showNation').text(value);
             }
           });
 
           // Display PURPOSE if it's set in DB
-          Object.keys(purposes).forEach((purpose) => {
-            if(purpose == /*[[${user.purpose}]]*/){
-              $('#showPurpose').text(purposes[purpose]);
+          $.each(purposes, (index, value) => {
+            if(value == /*[[${user.purpose}]]*/){
+              $('#showPurpose').text(value);
             }
-          })
+          });
 
         });
     

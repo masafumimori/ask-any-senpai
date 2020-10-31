@@ -71,6 +71,17 @@ public class IndexController {
 		
 		m.addAttribute("senpai", senpai);
 		
+		// ログインステータス確認
+		String userName = loginSession.getUserName();
+		String password = loginSession.getPassword();
+		UserSearchDto user;
+		if(userName != null && password != null) {
+			 user = userMapper.loginByUserNameAndPass(userName, password);
+		} else {
+			user = null;
+		}
+		m.addAttribute("user", user);
+
 		return "senpai_detail";
 	}
 

@@ -153,30 +153,30 @@
 
       $(() => {
          // Set default AREA based on DB and append options
-         Object.keys(areas).forEach((area) => {
-          let options = "<option value='" + area + "'>" + areas[area] + "</option>";
-          if(area == /*[[${user.area}]]*/){
-            $('option#hasArea').val(area).text(areas[area]);
+         $.each(areas, (index, value) => {
+          let options = "<option value='" + value + "'>" + value + "</option>";
+          if(value == /*[[${user.area}]]*/){
+            $('option#hasArea').val(value).text(value);
           }
 
           $("#area-select").append(options);
         });
 
         // Append options to nation select
-        Object.keys(nations).forEach((nation) => {
-          let options = "<option value='" + nation + "'>" + nations[nation] + "</option>";
-          if(nation == /*[[${user.nation}]]*/){
-            $('#hasNation').val(nation).text(nations[nation]);
+        $.each(nations, (index, value) => {
+          let options = "<option value='" + value + "'>" + value + "</option>";
+          if(value == /*[[${user.nation}]]*/){
+            $('#hasNation').val(value).text(value);
           }
 
           $("#nation-select").append(options);
         });
 
         // Append purposes to purpose
-        Object.keys(purposes).forEach((purpose) => {
-          let options = "<option value='" + purpose + "'>" + purposes[purpose] + "</option>";
-          if(purpose == /*[[${user.purpose}]]*/){
-            $('#hasPurpose').val(purpose).text(purposes[purpose]);
+        $.each(purposes, (index, value) => {
+          let options = "<option value='" + value + "'>" + value + "</option>";
+          if(value == /*[[${user.purpose}]]*/){
+            $('#hasPurpose').text(value);
           }
 
           $("#purpose-select").append(options);

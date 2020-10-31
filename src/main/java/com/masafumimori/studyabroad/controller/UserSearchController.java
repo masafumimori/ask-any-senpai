@@ -36,29 +36,21 @@ public class UserSearchController {
 		String[] nations;
 		String[] purposes;
 
-		if (s.getKeywords() != null) {
-			keywords =  s.getKeywords().replaceAll("　", " ").replaceAll("\\s{2,}", " ").trim().split(" ");
-		} else {
-			keywords = null;
-		}
+		keywords = s.getKeywords() != "" ?
+				 s.getKeywords().replaceAll("　", " ").replaceAll("\\s{2,}", " ").trim().split(" "):
+				null;
 
-		if (s.getAreas() != null) {
-			areas = s.getAreas().split(",");
-		} else {
-			areas = null;
-		}
+		areas = s.getAreas() != null ?
+			s.getAreas().split(",") :
+			null;
 
-		if (s.getNations() != null) {
-			nations = s.getNations().split(",");
-		} else {
-			nations = null;
-		}
+		nations = s.getNations() != null ?
+				s.getNations().split(",") :
+				null;
 		
-		if(s.getPurposes() != null) {
-			purposes = s.getPurposes().split(",");
-		} else {
-			purposes = null;
-		}
+		purposes = s.getPurposes() != null ?
+				s.getPurposes().split(",") :
+				null;
 
 		if (keywords != null) {
 			matchedUsers = searchMapper.findUserByKeywords(keywords);
@@ -69,11 +61,15 @@ public class UserSearchController {
 			matchedUserCount = matchedUsers.size();
 		}
 		
+		// ログインステータス確認
 		String userName = loginSession.getUserName();
 		String password = loginSession.getPassword();
-
-		UserSearchDto user = userMapper.loginByUserNameAndPass(userName, password);
-
+		UserSearchDto user;
+		if(userName != null && password != null) {
+			 user = userMapper.loginByUserNameAndPass(userName, password);
+		} else {
+			user = null;
+		}
 		m.addAttribute("user", user);
 
 		m.addAttribute("matchedUsers", matchedUsers);

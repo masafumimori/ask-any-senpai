@@ -68,6 +68,9 @@ VALUES
 	),
 	(
 		"demo21", "demo", "demo@email.com", "アフリカ", "エジプト", "仕事関係"
+	),
+	(
+		"demo22", "demo", "demo@email.com", "オセアニア", "ニュージーランド", "語学留学"
 	)
 ;
 
