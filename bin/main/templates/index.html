@@ -86,7 +86,7 @@
 
     <!-- Result section -->
     <div class="search-result">
-      <h2 th:if="${matchedUsers != null}">検索結果</h2>
+      <h2 th:if="${matchedUsers != null}">検索結果: <span th:text="${matchedUserCount} + '人'"></span></h2>
       <div class="result-box" th:if="${matchedUsers != null}">
         <div class="users-box" th:each="matchedUser, stat: ${matchedUsers}">
           <div class="info-area">
