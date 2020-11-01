@@ -160,24 +160,24 @@
         $("#short-study").on("change", shortBtnChange);
         $("#long-study").on("change", longBtnChange);
 
-        // Append areas to search form
+        // Append areas/nations to search form
         let areaBox = $(".area-box");
         let areaDiv = "<div class='areas'></div>";
-        $.each(areas, (index, value) => {
-          let areaInput = "<input type='checkbox' name='areas' class='area' value='" + value + "' id='" + value + "'/>";
-          let areaLabels = "<label for='" + value + "' class='area-name'>" + value + "</label>";
-          let areaContent = $(areaDiv).append($(areaInput)).append($(areaLabels));
-          $(areaBox).append($(areaContent));
-        });
-
-        // Append nations to search form        
         let nationBox = $(".nation-box");
         let nationDiv = "<div class='nations'></div>";
-        $.each(nations, (index, value) => {
-          let nationInput = "<input type='checkbox' name='nations' class='area' value='" + value + "' id='" + value + "'/>";
-          let nationLabels = "<label for='" + value + "' class='area-name'>" + value + "</label>";
-          let nationContent = $(nationDiv).append($(nationInput)).append($(nationLabels));
-          $(nationBox).append($(nationContent));
+
+        $.each(areasNations, (index, value) => {
+          let areaInput = "<input type='checkbox' name='areas' class='area' value='" + index + "' id='" + index + "'/>";
+          let areaLabels = "<label for='" + index + "' class='area-name'>" + index + "</label>";
+          let areaContent = $(areaDiv).append($(areaInput)).append($(areaLabels));
+          $(areaBox).append($(areaContent));
+          
+          $.each(value, (num, nation) => {
+            let nationInput = "<input type='checkbox' name='nations' class='area' value='" + nation + "' id='" + nation + "'/>";
+            let nationLabels = "<label for='" + nation + "' class='area-name'>" + nation + "</label>";
+            let nationContent = $(nationDiv).append($(nationInput)).append($(nationLabels));
+            $(nationBox).append($(nationContent));
+          });
         });
 
         // Append purposes to search form
