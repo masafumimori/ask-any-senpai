@@ -54,7 +54,6 @@ public class UserSearchController {
 
 		if (keywords != null) {
 			matchedUsers = searchMapper.findUserByKeywords(keywords);
-//			matchedUsers += searchMapper.findMatchedUser(areas, nations, purposes);
 			matchedUserCount = matchedUsers.size();
 		} else {
 			matchedUsers = searchMapper.findMatchedUser(areas, nations, purposes);
