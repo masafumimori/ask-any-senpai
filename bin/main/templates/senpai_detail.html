@@ -109,18 +109,16 @@
 
       $(() => {
 
-        // Display AREA if it's set in DB
-        $.each(areas, (index, value) => {
-          if(value == /*[[${senpai.area}]]*/){
-            $('#showArea').text(value);
-          }
-        });
-
-        // Display NATION if it's set in DB
-        $.each(nations, (index, value) => {
-          if(value == /*[[${senpai.nation}]]*/){
-            $('#showNation').text(value);
-          }
+        // Display area and nation if set in DB
+        $.each(areasNations, (index, value) => {
+            if(index == /*[[${senpai.area}]]*/){
+              $('#showArea').text(index);
+            }
+            $.each(value, (num, nation) => {
+              if(nation == /*[[${senpai.nation}]]*/){
+              $('#showNation').text(nation);
+              }
+            });
         });
 
         // Display PURPOSE if it's set in DB
