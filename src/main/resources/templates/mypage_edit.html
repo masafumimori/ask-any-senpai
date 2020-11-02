@@ -153,23 +153,24 @@
 
       $(() => {
          // Set default AREA based on DB and append options
-         $.each(areas, (index, value) => {
-          let options = "<option value='" + value + "'>" + value + "</option>";
-          if(value == /*[[${user.area}]]*/){
-            $('option#hasArea').val(value).text(value);
+         $.each(areasNations, (index, value) => {
+          let areaOptions = "<option value='" + index + "'>" + index + "</option>";
+          if(index == /*[[${user.area}]]*/){
+            $('option#hasArea').val(index).text(index);
           }
+          $("#area-select").append(areaOptions);
 
-          $("#area-select").append(options);
-        });
+          let nationOptgroups = $("<optgroup>", {label:index});
 
-        // Append options to nation select
-        $.each(nations, (index, value) => {
-          let options = "<option value='" + value + "'>" + value + "</option>";
-          if(value == /*[[${user.nation}]]*/){
-            $('#hasNation').val(value).text(value);
-          }
+          // For nations
+          $.each(value, (num, nation) => {
+            $("<option/>", {value: nation, text: nation}).appendTo(nationOptgroups);
+            if(nation == /*[[${user.nation}]]*/){
+              $('#hasNation').val(nation).text(nation);
+            }
 
-          $("#nation-select").append(options);
+            nationOptgroups.appendTo("#nation-select");
+          });
         });
 
         // Append purposes to purpose
