@@ -108,6 +108,7 @@
         // Need to fix here when form is submitted
         $(".form").submit((event) => {
 
+          // withErrorクラスの有無でエラーチェック
           let errorCheck = $(".input-box").hasClass("withError")? true: false;
 
           if(!errorCheck) {

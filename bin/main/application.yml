@@ -7,6 +7,14 @@ spring:
     password: Masafumi9@
     url: jdbc:mysql://localhost:3306/studyabroad
     username: root
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:  morimamama123@gmail.com #gmailアドレス
+    password: rmbuwqwrujpjdrfi #Googleのアプリパスワード
+    propeties.mail.smtp.auth: true
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.trust: smtp.google.com
 
 mybatis:
   configuration:
