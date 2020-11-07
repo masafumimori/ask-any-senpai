@@ -4,7 +4,7 @@
 .contact {
   width: 100%;
   height: 100%;
-  .contact-form {
+  .contact-box {
     width: 60%;
     height: fit-content;
     margin: 15vh auto 10vh;
@@ -18,12 +18,17 @@
       margin: 10px 0;
       text-align: center;
     }
+    .invalidForm {
+      margin-top: 10px;
+      color: #ff6060;
+      font-size: 0.9em;
+    }
     form {
       width: 95%;
       margin: 0 auto;
       .form-items {
         width: 100%;
-        margin: 15px 0;
+        margin: 15px 0 5px;
         display: flex;
         flex-direction: column;
         label {
@@ -48,12 +53,20 @@
           border-radius: 5px;
           width: 100%;
         }
+        input.withError,
+        textarea.withError {
+          border: 2px solid #ff6060;
+        }
+      }
+      .error-messages {
+        color: #ff6060;
+        font-size: 0.8em;
       }
       .caution-items {
-        margin: 5px 0;
+        margin: 15px 0;
         p {
           color: $pink;
-          font-size: 0.8rem;
+          font-size: 0.7rem;
           margin: 5px;
         }
       }
@@ -72,6 +85,15 @@
           &:hover {
             cursor: pointer;
             filter: contrast(150%);
+          }
+          &:disabled {
+            background: #909090;
+            border: 2px solid #303030;
+            color: #606060;
+            &:hover {
+              filter: none;
+              cursor: auto;
+            }
           }
         }
       }

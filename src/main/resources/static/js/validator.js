@@ -2,6 +2,7 @@ $(() => {
 
     const required_message = "必須項目です。ご入力下さい。";
 
+    // 新規登録フォーム正規表現
     $(".form").validate({
 
         rules: {
@@ -91,5 +92,72 @@ $(() => {
                 $(".invalidForm").hide();
             }
         }
-    })
+    });
+
+
+
+    // 問い合わせフォーム正規表現
+    $("form[name='contactForm']").validate({
+
+        // FocusアウトでValidation実行
+        onfocusout: function(element){
+            $(element).valid();
+        },
+        rules: {
+            name: {
+                required: true
+            },
+
+            email: {
+                required: true,
+                email: true
+            },
+
+            content: {
+                required: true,
+                minlength: 20
+            }
+        },
+        messages: {
+
+            name: {
+                required: required_message,
+            },
+
+            email: {
+                required: required_message,
+                email: "正しいメールアドレスをご入力ください。"
+            },
+
+            content: {
+                required: required_message,
+                minlength: "20文字以上でお問い合わせ内容を記述してください。"
+            } 
+        },
+        
+        // Change the place of error messages to after input-box
+        errorPlacement: function(error, element){
+            error.appendTo(element.parent().next(".error-messages"));
+        },
+
+        // Add error class to invalid input
+        errorClass: "withError",
+        highlight: function(element, errorClass) {
+            $(element).addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).removeClass(errorClass);
+        },
+
+        // When inputs are invalid
+        invalidHandler: function(event, validator){
+            let errors = validator.numberOfInvalids();
+            let errorMsg = "正しく入力されていない項目があります。";
+            if(errors > 0){
+                $(".invalidForm").html(errorMsg);
+            }else {
+                $(".invalidForm").hide();
+            }
+        }
+    });
 })

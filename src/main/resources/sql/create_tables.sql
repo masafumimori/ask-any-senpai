@@ -23,3 +23,11 @@ CREATE TABLE mst_user_sns (
 	updated_at TIMESTAMP NOT NULL default now(),
 	FOREIGN KEY(user_id) REFERENCES mst_user(id)
 );
+
+CREATE TABLE inquiry (
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+	subject  VARCHAR(20) NOT NULL,
+	name VARCHAR(32) NOT NULL,
+	email VARCHAR(32) NOT NULL,
+	content VARCHAR(255) NOT NULL
+)
