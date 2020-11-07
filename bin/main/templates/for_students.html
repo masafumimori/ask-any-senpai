@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/reset.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    />
+    <link rel="stylesheet" href="/css/default.min.css" />
+    <link rel="stylesheet" href="/css/page-header.min.css" />
+    <link rel="stylesheet" href="/css/page-footer.min.css" />
+    <link rel="stylesheet" href="/css/for_students.min.css" />
+    <title>Ask Any-Senpai</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header th:insert="fragments/page_header::pageHeader"></header>
+
+    <!-- Landing top -->
+    <section class="land-top">
+      <div class="top-content">
+        <h2>留学で不安なことがあれば、先輩に聞いてみましょう！</h2>
+        <p>
+          少しでも不安なことがあれば、なんでも先輩に聞いてみましょう。<br />
+          これから海外留学を考えている方をサポートするためのサービスです。
+        </p>
+        <a class="toSignup" href="/studyabroad/user/signup_page">無料でカンタン登録</a>
+      </div>
+    </section>
+
+    <!-- Explanation section -->
+    <section class="explain-section">
+        <h2>Ask any senpaiでできること3つ</h2>
+        <div class="explain-contents">
+            <div class="explain-items">
+                <div class="items item1">
+                    <h3 class="points">Point 1</h3>
+                    <h3 class="colorH3">興味のある大学に行った先輩を</h3>
+                    <p>簡単に探せます！</p>
+                </div>
+                <div class="items item2">
+                    <img src="/img/search-image.svg" alt="">
+                </div>
+            </div>
+            <div class="explain-items reverse">
+                <div class="items item1">
+                    <h3 class="points">Point 2</h3>
+                    <h3 class="colorH3">登録もカンタン！</h3>
+                    <p>しかも無料！</p>
+                </div>
+                <div class="items item2">
+                    <img src="/img/signup-image.svg" alt="">
+                </div>
+            </div>
+            <div class="explain-items">
+                <div class="items item1">
+                    <h3 class="points">Point 3</h3>
+                    <h3 class="colorH3">興味のある大学に行った先輩に</h3>
+                    <p>相談やアドバイスを聞けます！</p>
+                </div>
+                <div class="items item2">
+                    <img src="/img/chat-image.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="button-box">
+            <a class="toSignup" href="/studyabroad/user/signup_page">無料でカンタン登録</a>
+        </div>
+    </section>
+
+    <!-- Step section -->
+    <section class="step-section">
+        <h2>先輩に相談するまでの流れ</h2>
+        <div class="step-box">
+            <div class="steps">
+                <h3 class="step-head"><span>1</span>気になる大学の先輩を探す</h3>
+                <img src="/img/find-image.svg" alt="">
+            </div>
+            <div class="steps">
+                <h3 class="step-head"><span>2</span>先輩のプロフィールに行く</h3>
+                <img src="/img/senpai-image.svg" alt="">
+            </div>
+            <div class="steps">
+                <h3 class="step-head"><span>3</span>SNSでメッセージを送る</h3>
+                <img src="/img/talk-image.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer th:insert="fragments/page_footer::pageFooter"></footer>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/js/area-nation.js"></script>
+  </body>
+</html>

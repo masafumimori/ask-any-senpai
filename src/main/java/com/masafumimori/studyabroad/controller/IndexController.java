@@ -20,6 +20,7 @@ public class IndexController {
 	@Autowired
 	MstUserMapper userMapper;
 
+	// For top page
 	@RequestMapping("/")
 	public String index(Model m) {
 
@@ -33,6 +34,7 @@ public class IndexController {
 		return "index";
 	}
 
+	// For terms page
 	@RequestMapping("/terms")
 	public String terms(Model m) {
 		if (loginSession.isLogined()) {
@@ -46,6 +48,7 @@ public class IndexController {
 		return "terms";
 	}
 
+	// For contact page
 	@RequestMapping("/contact")
 	public String contact(Model m) {
 		if (loginSession.isLogined()) {
@@ -59,11 +62,13 @@ public class IndexController {
 		return "contact";
 	}
 	
+	// For policy page
 	@RequestMapping("/policy")
 	public String policy() {
 		return "policy";
 	}
 	
+	// For senpai detail
 	@RequestMapping("senpai/{id}")
 	public String senpaiPage(@PathVariable("id") int id, Model m) {
 		
@@ -85,17 +90,23 @@ public class IndexController {
 		return "senpai_detail";
 	}
 	
+	// For senpai search
 	@RequestMapping("/search-senpai")
 	public String senpai(Model m) {
 		
 		if (loginSession.isLogined()) {
 			UserSearchDto user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
 			m.addAttribute("user", user);
-			// m.addAttribute("loginSession", loginSession);
 		}
 		m.addAttribute("fromSenpaiSearch", "fromSenpaiSearch");
 		
 		return "index";
 	}
 
+	// For students
+	@RequestMapping("/for_students")
+	public String forStudent(Model m) {
+		
+		return "for_students";
+	}
 }
