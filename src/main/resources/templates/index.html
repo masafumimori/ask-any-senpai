@@ -160,6 +160,14 @@
         $("#short-study").on("change", shortBtnChange);
         $("#long-study").on("change", longBtnChange);
 
+        // If relocate form other page to search senpai
+        if($(".fromSenpaiSearch").length > 0){
+          let position = $(".search-section").position().top;
+          $("html, body").animate({
+            scrollTop: position
+          }, 500);
+        }
+
         // Append areas/nations to search form
         let areaBox = $(".area-box");
         let areaDiv = "<div class='areas'></div>";

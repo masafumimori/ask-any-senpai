@@ -34,8 +34,11 @@
         <div class="footer-items">
           <p><i class="fas fa-caret-right"></i> お役立ち情報</p>
         </div>
-        <div class="footer-items">
-          <p><i class="fas fa-caret-right"></i> 先輩を探す</p>
+        <div class="footer-items" th:if="${fromSenpaiSearch != null}">
+          <p class="senpai-search-btn fromSenpaiSearch"><i class="fas fa-caret-right"></i> 先輩を探す</p>
+        </div>
+        <div class="footer-items" th:if="${fromSenpaiSearch == null}">
+          <p class="senpai-search-btn"><i class="fas fa-caret-right"></i> 先輩を探す</p>
         </div>
         <div class="footer-items">
           <p class="terms-btn"><i class="fas fa-caret-right"></i> 利用規約</p>

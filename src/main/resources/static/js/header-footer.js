@@ -10,6 +10,7 @@ $(() => {
       $(scrollTop).css("opacity", "0");
     }
   });
+
   //When pressing scroll top button
   $(".scroll-top").on("click", function(){
     $("html, body").animate({
@@ -65,4 +66,19 @@ $(() => {
   $(".policy-btn").on("click", () => {
     location.replace("/studyabroad/policy");
   });
+
+  //When pressing senapi search button
+  $(".senpai-search-btn").on("click", () => {
+
+    // Scroll if search section is on the current page
+    if($(".search-section").length > 0){
+      let position = $(".search-section").position().top;
+      $("html, body").animate({
+        scrollTop: position
+      }, 500);
+    } else {
+      // Page relocate if search section is NOT on the current page
+      location.replace("/studyabroad/search-senpai");
+    }
+  })
 });

@@ -84,5 +84,18 @@ public class IndexController {
 
 		return "senpai_detail";
 	}
+	
+	@RequestMapping("/search-senpai")
+	public String senpai(Model m) {
+		
+		if (loginSession.isLogined()) {
+			UserSearchDto user = userMapper.loginByUserNameAndPass(loginSession.getUserName(), loginSession.getPassword());
+			m.addAttribute("user", user);
+			// m.addAttribute("loginSession", loginSession);
+		}
+		m.addAttribute("fromSenpaiSearch", "fromSenpaiSearch");
+		
+		return "index";
+	}
 
 }
