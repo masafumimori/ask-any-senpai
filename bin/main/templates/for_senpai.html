@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/reset.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    />
+    <link rel="stylesheet" href="/css/default.min.css" />
+    <link rel="stylesheet" href="/css/page-header.min.css" />
+    <link rel="stylesheet" href="/css/page-footer.min.css" />
+    <link rel="stylesheet" href="/css/for_senpai.min.css" />
+    <title>Ask Any-Senpai</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header th:insert="fragments/page_header::pageHeader"></header>
+
+    <!-- Landing top -->
+    <section class="land-top">
+      <div class="top-content">
+        <h2>留学相談にのると、〇〇してもらえるマッチングサービス</h2>
+        <p>
+            「留学相談にのるので、◯◯してくれませんか？」という合言葉のもと、<br />
+            後輩の留学相談にのるかわりにお願い事をすることができます。
+        </p>
+        <a class="toSignup" href="/studyabroad/user/signup_page">無料でカンタン登録</a>
+      </div>
+    </section>
+
+    <!-- Message section -->
+    <section class="message-section">
+        <h2>Ask any senpaiからの<span>1</span>つのお願い</h2>
+        <div class="message-box">
+            <p>Ask any senpaiは、海外留学経験者にOB訪問ができるマッチングサービスです。<br/>
+                <br/>
+                私たちはこのサービスによって、何かと不安の多い海外留学を控える人々が、<br/>
+                不安を払拭し、より多くの学びを得られるようにしていきたいと考えています。<br/>
+                <br/>
+                そこでぜひ皆さんが留学前に知りたかったことや留学の愉しさや厳しさについて、<br/>
+                留学を考えている後輩たちに伝えていただきたいです。<br/>
+                <br/>
+                後輩たちが留学を通じて、より多くのことを学び成長できるよう、<br/>
+                どうか皆さんの力をお貸しください。
+            </p>
+            <p class="signature">Ask any senpai CEO<br/>
+            <span>Masafumi Mori</span></p>
+        </div>
+        <div class="button-box">
+            <a class="toSignup" href="/studyabroad/user/signup_page">無料でカンタン登録</a>
+        </div>
+    </section>
+
+    <!-- Step section -->
+    <section class="step-section">
+        <h2>後輩の相談にのるまでの流れ</h2>
+        <div class="step-box">
+            <div class="steps">
+                <h3 class="step-head"><span>1</span>Ask any senapiに登録する</h3>
+                <img src="/img/signup-image.svg" alt="">
+            </div>
+            <div class="steps">
+                <h3 class="step-head"><span>2</span>留学先などを登録する</h3>
+                <img src="/img/senpai-image.svg" alt="">
+            </div>
+            <div class="steps">
+                <h3 class="step-head"><span>3</span>後輩からSNSで相談が来る</h3>
+                <img src="/img/talk-image.svg" alt="">
+            </div>
+        </div>
+        <div class="button-box">
+            <a class="toSignup" href="/studyabroad/user/signup_page">無料でカンタン登録</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer th:insert="fragments/page_footer::pageFooter"></footer>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </body>
+</html>

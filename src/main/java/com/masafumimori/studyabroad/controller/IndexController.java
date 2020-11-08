@@ -70,7 +70,7 @@ public class IndexController {
 	
 	// For senpai detail
 	@RequestMapping("senpai/{id}")
-	public String senpaiPage(@PathVariable("id") int id, Model m) {
+	public String senapiDetail(@PathVariable("id") int id, Model m) {
 		
 		UserSearchDto senpai = userMapper.findById(id);
 		
@@ -103,10 +103,15 @@ public class IndexController {
 		return "index";
 	}
 
-	// For students
+	// For for_students page
 	@RequestMapping("/for_students")
 	public String forStudent(Model m) {
 		
 		return "for_students";
+	}
+	
+	@RequestMapping("/for_senpai")
+	public String forSenpai(Model m) {
+		return "for_senpai";
 	}
 }
